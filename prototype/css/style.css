@@ -1,0 +1,17 @@
+# Empty CSS file for your own CSS
+
+#myMenu{
+  color: blue;
+}
+
+
+#create_event {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+#create_event:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
