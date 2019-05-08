@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Create Event</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+<div id = "paper">
+    <div class="container-fluid">
+		<div id = "headLine" class="col-md-12">
+			<h1 class="text-center text-primary">
+				+ New event
+			</h1>
+		</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class = "subLine">
+				Event information:
+			</h3>
+      <table id="eventInfo">
+        <tr class= "eventInfo"><!-- title -->
+          <td class = "firstCol"><label for="eventTitle">Event title:</label></td>
+          <td><input type="text" class="form-control" id="eventTitle"></td>
+        </tr>
+          <tr class= "eventInfo"><!-- calendar-->
+              <td class = "firstCol" id="pickup_date"><label class="form">Date:</label> </td>
+              <td id = "clndr">  <input type="date" class="textbox" id="pick_date" name="pickup_date" style="width:230px;height:37px" onchange="cal()"</p></td>
+          </tr>
+          <tr class= "eventInfo"><!-- duration-->
+              <td class = "firstCol"><label>Expected duration:</label></td>
+              <td><input type="number" id="duration" name="duration" style="height:37px" min="1" max="20"> hours</td>
+          </tr>
+          <tr class= "eventInfo">
+            <td class = "firstCol"><label for="image">Add image:</label></td>
+            <td><input type="file" class="form-control-file" id="exampleInputFile"style="width:230px;height:37px"></td>
+          </tr>
+          <tr class= "eventInfo">
+            <td class = "firstCol"><label for="location">Location:</label></td>
+            <td> <input type="text" class="form-control" id="exampleInputEmail1"></td>
+          </tr>
+          <tr>
+            <td class = "firstCol" id = "descr"><label for="description">Description:</label></td>
+            <td><textarea class="form-control" id="description" placeholder="Please, write one or two paraghraphs about your event..." ></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+      </table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class = "subLine">
+				Specify tasks for helpers:
+			</h3>
+      <table id ="helpTable">
+        <tbody>
+        <tr class = "helpRow">
+          <td class = "col1"><button type = "button"; class = "delete" ; > Remove </button></td>
+          <td class = "col2"><input type="text" placeholder= "e.g. Cook" style="width:230px;height:37px;";></input><input type="number" id="pplNumber" style="height:28px" min="1" placeholder = "1"></input><img id = "imagePerson" src="file:///Users/assem/Desktop/GitHub/SundaySiesta/create_page/src/6b7e95cf9c.svg" style="height:30px;"/></td>
+          <td class = "col3"><textarea class="form-control" id="descriptionOfTask" placeholder="e.g. Responsibilities are to uy and cook vegetables..." ></textarea></td></td>
+        </tr>
+        <tr class = "helpRow">
+          <td class = "col1"><button type = "button"; class = "delete"; > Remove </button></td>
+          <td class = "col2"><input type="text" placeholder= "e.g. Reservation" style="width:230px;height:37px;"></input><input type="number" id="pplNumber" style="height:28px" min="1" placeholder = "1"></input><img id = "imagePerson" src="file:///Users/assem/Desktop/GitHub/SundaySiesta/create_page/src/6b7e95cf9c.svg" style="height:30px;"/></td>
+          <td class = "col3"><textarea class="form-control" id="descriptionOfTask" placeholder="e.g. Responsibilities are to reserve room and apparature..." ></textarea></td></td>
+        </tr>
+      </tbody>
+      </table>
+      <button type = "button"; class = "delete" id = "addNew"; > + Add new </button>
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+
+body {
+  background-color: powderblue;
+}
+
+#headLine{
+  width: auto;
+  height: 100px;
+}
+#paper {
+  width: 95%;
+  height: 90%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 50px;
+  margin: auto;
+  bottom: 10px;
+}
+
+#pick_date{
+  color: #393A3B;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  border-color: #D5D7D8;
+}
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    margin-right: 0.5em;
+    margin-left: 0em;
+  }
+
+#duration{
+  color: #393A3B;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  border-color: #D5D7D8;
+  align-content: flex-end;
+}
+
+#pickup_date{
+    height: 50px;
+    margin:0 auto;
+}
+#clndr{
+  height: 40px;
+}
+#eventInfo{
+  width: 100%;
+}
+#helpTable{
+  width: 100%;
+
+}
+#pplNumber{
+  border-width: 0px;
+  margin-right: 0em;
+  margin-left: 1em;
+  width: 35px;
+}
+#imagePerson{
+  margin-right: 1em;
+  margin-left: 0em;
+}
+#description{
+  height: 200px;
+  width: 100%;
+  border-radius: 3px;
+
+}
+#descr{
+    vertical-align: top;
+    border-radius: 3px;
+
+}
+#descriptionOfTask{
+align-items: center;
+height: 100px;
+border-radius: 4px;
+
+}
+.delete{
+  background-color: #E1E0E0;
+  border-radius: 5px;
+  margin-top: 2.5px;
+
+
+}
+.helpRow{
+  height: 120px;
+}
+.eventInfo{
+  height: 50px;
+}
+.firstCol{
+  width: 150px;
+  text-align: right;
+}
+.col1{
+  width:130px;
+  height: 40px;
+  vertical-align: top;
+}
+.col2{
+  width: 350px;
+  vertical-align: top;
+  text-align: right;
+}
+.col3{
+  width:auto;
+  vertical-align: top;
+}
+
+.subLine{
+  height: 50px;
+}
+tr{
+  height: 40px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+   opacity: 1;
+}
