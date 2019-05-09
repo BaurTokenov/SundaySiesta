@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Create Event</title>
-
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
   </head>
+
   <body>
 <div id = "paper">
-    <div class="container-fluid">
-		<div id = "headLine" class="col-md-12">
-			<h1 class="text-center text-primary">
+			<h1  style = "color:#23AEF4; text-align: center;">
 				+ New event
 			</h1>
-		</div>
 	<div class="row">
 		<div class="col-md-12">
-			<h3 class = "subLine">
+			<h3 class = "subLine" style = "color:#23AEF4">
 				Event information:
 			</h3>
-      <table id="eventInfo">
+      <table id="eventInfo" >
         <tr class= "eventInfo"><!-- title -->
-          <td class = "firstCol"><label for="eventTitle">Event title:</label></td>
-          <td><input type="text" class="form-control" id="eventTitle"></td>
+          <td class = "firstCol"><label for="eventTitle" class = "form">Event title:</label></td>
+          <td class = "secondCol"><input type="text" class="form-control" id="eventTitle"></td>
         </tr>
           <tr class= "eventInfo"><!-- calendar-->
               <td class = "firstCol" id="pickup_date"><label class="form">Date:</label> </td>
-              <td id = "clndr">  <input type="date" class="textbox" id="pick_date" name="pickup_date" style="width:230px;height:37px" onchange="cal()"</p></td>
+              <td class = "secondCol" id = "clndr">  <input type="date" class="textbox" id="pick_date" name="pickup_date" style="width:230px;height:37px" onchange="cal()"</p></td>
           </tr>
           <tr class= "eventInfo"><!-- duration-->
-              <td class = "firstCol"><label>Expected duration:</label></td>
-              <td><input type="number" id="duration" name="duration" style="height:37px" min="1" max="20"> hours</td>
+              <td class = "firstCol"><label class = "form">Expected duration:</label></td>
+              <td class = "secondCol"><input type="number" id="duration" name="duration" style="height:37px" min="1" max="20"> hours</td>
           </tr>
           <tr class= "eventInfo">
-            <td class = "firstCol"><label for="image">Add image:</label></td>
-            <td><input type="file" class="form-control-file" id="exampleInputFile"style="width:230px;height:37px"></td>
+            <td class = "firstCol"><label for="image" class = "form">Add image:</label></td>
+            <td class = "secondCol"><input type="file" class="form-control-file" id="exampleInputFile"style="width:230px;height:37px"></td>
           </tr>
           <tr class= "eventInfo">
-            <td class = "firstCol"><label for="location">Location:</label></td>
-            <td> <input type="text" class="form-control" id="exampleInputEmail1"></td>
+            <td class = "firstCol"><label for="location" class = "form">Location:</label></td>
+            <td class = "secondCol"> <input type="text" class="form-control" id="exampleInputEmail1"></td>
           </tr>
           <tr>
-            <td class = "firstCol" id = "descr"><label for="description">Description:</label></td>
-            <td><textarea class="form-control" id="description" placeholder="Please, write one or two paraghraphs about your event..." ></textarea></td>
+            <td class = "firstCol" id = "descr"><label for="description" class = "form">Description:</label></td>
+            <td class = "secondCol"><textarea class="form-control" id="description" placeholder="Please, write one or two paraghraphs about your event..." ></textarea></td>
           </tr>
           <tr>
             <td></td>
@@ -60,31 +60,54 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<h3 class = "subLine">
+			<h3 class = "subLine" style = "color:#23AEF4">
 				Specify tasks for helpers:
 			</h3>
       <table id ="helpTable">
         <tbody>
         <tr class = "helpRow">
-          <td class = "col1"><button type = "button"; class = "delete" ; > Remove </button></td>
-          <td class = "col2"><input type="text" placeholder= "e.g. Cook" style="width:230px;height:37px;";></input><input type="number" id="pplNumber" style="height:28px" min="1" placeholder = "1"></input><img id = "imagePerson" src="file:///Users/assem/Desktop/GitHub/SundaySiesta/create_page/src/6b7e95cf9c.svg" style="height:30px;"/></td>
-          <td class = "col3"><textarea class="form-control" id="descriptionOfTask" placeholder="e.g. Responsibilities are to uy and cook vegetables..." ></textarea></td></td>
+          <td class = "col0"><button type = "button"; class = "remove" ; > Remove </button></td>
+          <td class = "col1"><input type="text" id = "title"placeholder= "Task title" style="width:230px;height:45px;";></input> <center><input type="number" id="pplNumber" style="height:45px; width: 230px" max = "30" min="1" placeholder = "Number of helpers"></input></center></td>
+          <td class = "col2"><textarea class="form-control" id="descriptionOfTask" placeholder="Describe responsibilities" ></textarea></td></td>
         </tr>
         <tr class = "helpRow">
-          <td class = "col1"><button type = "button"; class = "delete"; > Remove </button></td>
-          <td class = "col2"><input type="text" placeholder= "e.g. Reservation" style="width:230px;height:37px;"></input><input type="number" id="pplNumber" style="height:28px" min="1" placeholder = "1"></input><img id = "imagePerson" src="file:///Users/assem/Desktop/GitHub/SundaySiesta/create_page/src/6b7e95cf9c.svg" style="height:30px;"/></td>
-          <td class = "col3"><textarea class="form-control" id="descriptionOfTask" placeholder="e.g. Responsibilities are to reserve room and apparature..." ></textarea></td></td>
+          <td class = "col0"><button type = "button"; class = "remove" ; > Remove </button></td>
+          <td class = "col1"><input type="text" id = "title"placeholder= "Task title" style="width:230px;height:45px;";></input> <center><input type="number" id="pplNumber" style="height:45px; width: 230px" max = "30" min="1" placeholder = "Number of helpers"></input></center></td>
+          <td class = "col2"><textarea class="form-control" id="descriptionOfTask" placeholder="Describe responsibilities" ></textarea></td></td>
         </tr>
       </tbody>
       </table>
-      <button type = "button"; class = "delete" id = "addNew"; > + Add new </button>
+      <div><button type = "button"; class = "addNew" id = "addNew"; > + Task </button></div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class = "subLine" style = "color:#23AEF4;   margin-top: 40px;">
+          Request:
+        </h3>
+        <p style="margin-left: 30px; font-weight: bold;">Send request to people you already know by their ID:</p>
+        <div style="margin-left: 30px;">
+        <table id = "reqTable" >
+          <tr >
+            <td > <input type = "text" placeholder="Name" id = "name"  > </td>
+            <td > <button type = "button" id = "reqBtn" class = "req-submit">Select</button></td>
+          </tr>
+        </table>
+      </div>
+      </div>
+    </div>
+    <div class = lastBtn>
+          <button type = "button" class = "del";  id = "cancel"; > Cancel </button>
+          <button type="submit" value="Submit" id = "submitBtn" class = "sbmt">Submit</button>
+    </div>
 		</div>
 	</div>
-</div>
 
+<!-- <img id = "imagePerson" src="file:///Users/assem/Desktop/GitHub/SundaySiesta/create_page/src/6b7e95cf9c.svg" style="height:30px;"/> -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-  </div>
+
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+</div>
   </body>
 </html>
