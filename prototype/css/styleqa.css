@@ -1,0 +1,113 @@
+body {
+  margin-bottom: 10%;
+  /* margin-right: 10%; */
+  /* font-family: sans-serif; */
+}
+
+.questions {
+  text-align: right;
+  font-size: 16px;
+  color: #4286f4;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+    color: #4286f4;
+}
+
+.bottom-section {
+    margin-left: 18%;
+    margin-right: 10%;
+}
+
+.center {
+  /* align-self: center; */
+  position: absolute;
+  width: 23%;
+  height: 13px;
+  /* text-align: center; */
+  vertical-align: middle;
+  padding: 1em 1em;
+  padding-bottom: 2em;
+  font-size: 20px;
+  margin-left: 261px;
+  margin-top: 7px;
+  background-color: powderblue;
+  /* border: 2px solid black; */
+  /* border-radius: 50%; */
+  /* margin: 0 0 20px; */
+}
+
+.center:hover {
+  background-color: #4286f4;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  vertical-align: top;
+  text-align: center;
+  border: 2px solid powderblue;
+  display: inline-block;
+  height: 30px;
+  padding: 1.5em 1em;
+  margin: 0 1.8% 20px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.row {
+  font-size: 27px;
+}
+
+h1 {
+  vertical-align: top;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.search-bar {
+  width: 75%;
+  margin-left: 10%;
+  font-size: 17px;
+  border: none;
+  padding: 14px;
+  float: none;
+  margin-bottom: 2%;
+  display: inline-block;
+}
+
+#top-box button:hover {
+  background: #ccc;
+}
+
+.search-button {
+  cursor: pointer;
+  width: 4%;
+  padding: 15px 9px;
+  margin-top: 1px;
+  background: #ddd;
+  /* margin-right: 16px; */
+  font-size: 17px;
+  border: none;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#top-box {
+  padding: 2em;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  background-color: powderblue;
+  /* #4286f4; */
+}
