@@ -1,0 +1,105 @@
+# Empty CSS file for your own CSS
+
+#myMenu{
+  color: blue;
+}
+
+.checkboxLabels {
+	font-size: 40px;
+}
+
+.eventFilter input[type="checkbox"] + label {
+  color: #dbdbdb;
+  font-style: normal;
+} 
+.eventFilter input[type="checkbox"]:checked + label {
+  /*color: ;*/
+  /*font-style: italic;*/
+  color: #ffff;
+  font-weight: bolder;
+} 
+
+.fillout input[type="checkbox"] + label {
+  /*color: black;*/
+  font-style: normal;
+} 
+ .fillout input[type="checkbox"]:checked + label {
+  /*color: ;*/
+  /*font-style: italic;*/
+  /*color: #dbdbdb;*/
+  font-weight: 600;
+} 
+.fillout input[type="checkbox"]:disabled + label {
+  color: #727272;
+}
+
+#events .col-md-6 {
+  width: 50%;
+  border: 1px solid black;
+}
+
+
+.checkbox:checked {
+  font-style: oblique;
+  font-style: italic;
+
+  font-family: sans-serif;
+}
+
+
+.checkbox {
+    margin-left: 40px;
+}
+.eventFilter .checkbox {
+	float:left;
+
+}
+
+
+/*.checkboxLabels input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+*/
+
+/*#events {
+	display: none;
+}*/
+
+.fillout {
+	display: none;
+}
+#create_event {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: None;
+  background-color: #4286f4;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  width: 300px;
+  height: 100px;
+  margin-top: 50px;
+  font-size: 30px; 
+}
+
+.row {
+	margin-top: 50px;
+
+}
+
+#create_event:hover {
+  background-color: #154a96; 
+  
+}
+td {
+	background-color: red;
+	border: 1px solid darkgrey;
+	border-collapse: collapse;
+	width: 900px;
+	text-align: center;	
+}
+
