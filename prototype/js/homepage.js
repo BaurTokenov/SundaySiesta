@@ -128,8 +128,10 @@ $( document ).ready(function()	{
 
 	$(".row").on('click','.cancelButton',function(){
 			var ind = ($(this).closest('div')).parent().hide()
-			var x = ($(this).closest('div').parent().parent().children('.eventDescr'))
-			x.animate( { "opacity": "show", top:"100"} , 500 );
+			var x = events;
+			populateEvents();
+			// var x = ($(this).closest('div').parent().parent().children('.eventDescr'))
+			// x.animate( { "opacity": "show", top:"100"} , 500 );
 			
      });
 	
