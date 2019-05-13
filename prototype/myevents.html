@@ -45,14 +45,14 @@
 				<h1> Created Events </h1>
 			</div>
 		</div>
-		<div class ="row" style = "background-color: white; width: 100%; margin: 0 auto;margin-top: 2%">
+		<div class ="row myEvents" style = "background-color: white; width: 100%; margin: 0 auto;margin-top: 2%">
 			<div class="col-md-8 dancingEvent" style="border: 2px solid black">
 				<div style="text-align: left;" class = "eventDescr">
 					<h4>Title: Dancing event</h4>
 					<h4>Description</h4>
 					<h4>Date: 19.05.19</h4>
 					<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
-						<button type="button" class="btn btn-primary joinButton" > Edit </button>
+						<button type="button" class="btn btn-primary editOwn" > Edit </button>
 					</div>
 					<div class="accordion" id="accordionExample">
 						 <!-- <div class="card"> -->
@@ -64,42 +64,31 @@
 					      		</h2>
 							</div>
 						<!-- </div> -->
-						<div id="collapseOne" class="collapse hide col-md-7" aria-labelledby="headingOne" data-parent="#accordionExample">
-	      					<div class="card-body">
-	      						<div>
-	      							<h2> Helpers1</h2>
-	        						<ul class="list-group">
-									  <li class="list-group-item"> Participant </li>
-									  <li class="list-group-item"> Participant </li>
-									  <li class="list-group-item"> Participant </li>
-									</ul>
-								</div>	
-								<div style="margin-bottom: 5%">
-									<h2> Helpers2</h2>
-        							<ul class="list-group">
-								  	  <li class="list-group-item"> Participant </li>
-									  <li class="list-group-item"> Participant </li>
-									  <li class="list-group-item"> Participant </li>
-									</ul>
-								</div>
-      						</div>
-      					</div>
-      				</div>
-      			</div>
-      		</div>
+					<div id="collapseOne" class="collapse hide col-md-7" aria-labelledby="headingOne" data-parent="#accordionExample" style="margin-top: 1%">
+      					<div class="card-body">
+      						<div style="margin-bottom: : 3%">
+      							<h2> Helpers1 <p style="display: inline;"> 3/4 </p></h2>
+        						<ul class="list-group">
+								  <li class="list-group-item"> Participant </li>
+								  <li class="list-group-item"> Participant </li>
+								  <li class="list-group-item"> Participant </li>
+								</ul>
+							</div>	
+							<div style="margin-bottom: 5%">
+								<h2> Helpers2 <p style="display: inline;"	> 3/3 </p></h2>
+    							<ul class="list-group">
+							  	  <li class="list-group-item"> Participant </li>
+								  <li class="list-group-item"> Participant </li>
+								  <li class="list-group-item"> Participant </li>
+								</ul>
+							</div>
+  						</div>
+  					</div>
+  					</div>
+  				</div>
+  			</div>
   
-						
-
-			<div class="col-md-8 dancingEvent" style="border: 2px solid black; border-top: none">
-				<div style="text-align: left;" class = "eventDescr">
-					<h4>Title: Dancing event</h4>
-					<h4>Description</h4>
-					<h4>Date: 19.05.19</h4>
-					<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
-						<button type="button" class="btn btn-primary joinButton" > Edit </button>
-					</div>
-				</div>
-			</div>
+					
 		</div>
 		
 		<div class = "row" style = "width: 100%; margin: 0 auto; margin-top: 2%">
@@ -108,7 +97,7 @@
 			</div>
 		</div>
 
-		<div class ="row" style = "background-color: white; width: 100%; margin: 0 auto;margin-top: 2%">
+		<div class ="row otherEvents" style = "background-color: white; width: 100%; margin: 0 auto;margin-top: 2%">
 			<div class="col-md-8 dancingEvent" style="border: 2px solid black">
 				<div style="text-align: left;" class = "eventDescr">
 					<h4>Title: Dancing event</h4>
@@ -118,6 +107,8 @@
 						<button type="button" class="btn btn-primary joinButton" > Edit </button>
 					</div>
 				</div>
+
+
 			</div>
 			<div class="col-md-8 dancingEvent" style="border: 2px solid black;border-top: none;">
 				<div style="text-align: left;" class = "eventDescr">
@@ -125,15 +116,46 @@
 					<h4>Description</h4>
 					<h4>Date: 19.05.19</h4>
 					<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
-						<button type="button" class="btn btn-primary joinButton" > Edit </button>
+						<button type="button" class="btn btn-primary editButton" > Edit </button>
+					</div>
+				</div>
+				<div  class = "fillout" style="text-align: center">
+					<h2> How would you like to help the organizer? </h2>
+					<h3 style="text-align: left;margin-top: 3%"> Title: Blah Blah</h3>
+					<div class = "row" style="margin-top: 1%">
+						<div class = "checkbox" >
+							<input type = "checkbox" class = "helpCheckbox" id ="cookingHelp" name = "ossm"> 
+							<label class = "checkboxLabels" for="cookingHelp" style="">  
+								Cooking
+							</label>
+						</div>
+						<div class = "checkbox" >
+							<input type = "checkbox" class = "helpCheckbox"  id="speakerHelp" name = "ossm"> 
+							<label class = "checkboxLabels" for="speakerHelp" style=""> 
+								Reservation of speaker 
+							</label>
+						</div>
+						<div class = "checkbox">
+							<input type = "checkbox" class = "helpCheckbox"  id ="roomHelp" name = "ossm"> 
+							<label class = "checkboxLabels" for="roomHelp" style=""> 
+								Reservation of room 
+							</label>
+						</div>
+					</div>
+					<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
+						<button type="button" class="btn btn-primary submitButton" > Submit </button>
 					</div>
 				</div>
 			</div>
 		</div>
-	
+		
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/myevents.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script src="js/tables.js"></script>
+    
   </body>
 </html>

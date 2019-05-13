@@ -1,15 +1,15 @@
 $( document ).ready(function()	{
-	checkboxIDs = ['allCheckbox', 'cookingCheckbox', 'dancingCheckbox', 'traditionalGamesCheckbox', 'otherCheckbox']
-	typeOfEvents = ['cookingEvent', 'dancingEvent',  'tradGamesEvent', 'otherEvent'];
-	events = [{'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
-	'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 4, 3, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 1, 1]], "join_status": true },
-		{'title': "Meow_Meow", 'description': 'Meow meow meowm meow', 'date': '2019.05.25',
-		 "type": "dancingEvent", "help": [['helper_dancers', 3, 1, 0, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 0, 0] ], "join_status": false}
-	] 
-	checkbox2EventType = {}	
-	for (i = 1; i < checkboxIDs.length; i++) {
-		checkbox2EventType[checkboxIDs[i]] = typeOfEvents[i-1];
-	}
+	// checkboxIDs = ['allCheckbox', 'cookingCheckbox', 'dancingCheckbox', 'traditionalGamesCheckbox', 'otherCheckbox']
+	// typeOfEvents = ['cookingEvent', 'dancingEvent',  'tradGamesEvent', 'otherEvent'];
+	// events = [{'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
+	// 'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 4, 3, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 1, 1]], "join_status": true },
+	// 	{'title': "Meow_Meow", 'description': 'Meow meow meowm meow', 'date': '2019.05.25',
+	// 	 "type": "dancingEvent", "help": [['helper_dancers', 3, 1, 0, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 0, 0] ], "join_status": false}
+	// ] 
+	// checkbox2EventType = {}	
+	// for (i = 1; i < checkboxIDs.length; i++) {
+	// 	checkbox2EventType[checkboxIDs[i]] = typeOfEvents[i-1];
+	// }
 
 	function parse_string(s) {
 		ans = ""
@@ -37,13 +37,16 @@ $( document ).ready(function()	{
 		}
 		return ans;
 	}
-	function populateEvents() {
+	async function populateEvents() {
+		// var checkPopulate =  readFromDatabase();
+		// var checkPopulate1 = await checkPopulate;
+		
 		$("#events").empty();
 		for (var i = 0; i < events.length; i++) {
 			curEvent = events[i];
 			curEvent.join_status = false;
 			for (var j = 0; j < curEvent.help.length; ++j) {
-				if (curEvent.help[j][3]) {
+				if (curEvent.help[j][3] == 1) {
 					curEvent.join_status = true;
 					break;
 				}
@@ -61,12 +64,10 @@ $( document ).ready(function()	{
 			 					} else {
 			 						markup += `<p class = "mb-0"> You have already joined this event</p>	
 			 						<div class="text-right" style="margin-bottom: 1%; margin-right: 1%"> 
-			 									
 			 									<button type="button" class="btn btn-primary editButton" > Edit </button>
 			 									</div>`
 			 					}
 			 			markup += `</div>`
-			 				
 			// $('#events').append(markup);
 				   markup+=`<div class = "fillout" style="text-align: center">
 								<h2 style = "margin-top:2%"> How would you like to help the organizer? </h2>
@@ -98,9 +99,25 @@ $( document ).ready(function()	{
 								</div>
 							</div>
 						</div>`
+			if (curEvent.userCreate == 1) {
+				markup = `<div class="col-md-6 `  + curEvent.type + ` z` + i.toString() + `">
+			 				<div style="text-align: left;margin-top: 2%" class = "eventDescr">
+		 						<h4> Title: ` + parse_string(curEvent.title) + `</h4>
+					 			<h4> Description: ` + curEvent.description + `</h4>
+			 					<h4> Date: ` + curEvent.date + `</h4>`
+			 					
+			 						markup += `<p class = "mb-0"> You are the creator of this event, to change it, go to the My EVents page</p>`
+			 						// <div class="text-right" style="margin-bottom: 1%; margin-right: 1%"> 
+			 						// 			<button type="button" class="btn btn-primary editButton" > Edit </button>
+			 						// 			</div>`
+			 					
+			 			markup += `</div>`
+			 	}
 			$('#events').append(markup)
+			}
+			
 
-		}
+		
 
 		$(".fillout input[type=checkbox]").change(function () {
 			var x = ($(this).parent());
@@ -116,7 +133,7 @@ $( document ).ready(function()	{
 			// x.append()
 
 		});
-
+		
 	}
 
 
@@ -246,6 +263,27 @@ $( document ).ready(function()	{
 		// }
 
 	});
-	populateEvents();
+	async function f() {
+		var kek1 = writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
+			'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 4, 3, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 0, 0]], 'index': 0, 'userCreate': 0, 'type': dancingEvent})
+				
+		var kek2 = writeToDatabase({'title': "Gaf_gaf_gaf", 'description': "gaf blah gaf blah blah", 
+			'date': '2019.05.31', "type": "cookingEvent", "help": [['cooking', 2, 2, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 1, 1]], 'index': 1, 'userCreate': 1, 'type': cookingEvent})
+		// readFromDatabase();	
+		var kek3 = await kek1;
+		var kek4 = await kek2;
+		if (kek3 && kek4) {
+		var checkPopulate =  readFromDatabase();
+		var checkPopulate1 = await checkPopulate;
+		// checkPopulate1 = true;
+		if (checkPopulate1) {
+			
+
+			populateEvents();
+		}
+	}
+	} 
+	// populateEvents();
+	f();
 
 });
