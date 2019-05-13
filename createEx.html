@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Event</title>
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="create_event.css" rel="stylesheet">
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+  </head>
+
+  <body>
+    <!-- NOTIFICATION -->
+    <div class="container-fluid" style="">
+    <div class="row" style="margin-top: 0.5%; background-color: white;z-index: 999;">
+      <div class="col-md-6" id = "myMenu">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link " href="./homepage.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./myevents.html">My Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./history.html">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./qanda.html">Q&A</a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+    <div  id = "notificationCanvas" style = "position:relative; right: 0;   z-index: 200; ">
+      <button class = "back" > Back</button></div>
+
+      <div style = "position:absolute; right: 0;" id = "bell">
+        <i class="fas fa-bell"  style=" font-size: 25px; margin-right: 15px; color: #FDDE62;"></i>
+      </div>
+      <div id="openNotif">
+        <div class="triangle-up" style = "position:absolute; right: 43px;top: 75px;"></div>
+          <div id = "notifPaper" style = "position:absolute; right: 0; overflow: scroll">
+            <div style="padding:20px;">
+              <text style = "font-weight: bold; font-size:16px; ">Notifications</text>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fas fa-check-circle" style= "color:green" ></i><div style = "margin-left:20px;">You have created new event!</div><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">1 min</text></li>
+                <li class="list-group-item"><i class="fas fa-handshake" style= "color:orange" ></i><text style = "margin-left:20px">Help request from Antonio</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">30 min</text></li>
+                <li class="list-group-item"><i class="fas fa-user-plus" style= "color:#318DE9" ></i><text style = "margin-left:20px">Julio joined your event for reservation task</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">1 h</text></li>
+                <li class="list-group-item"><i class="fas fa-question-circle"style= "color:#FB4E4E"></i><text style = "margin-left:20px">New question about food</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">3 h</text></li>
+                <li class="list-group-item"><i class="fas fa-handshake" style= "color:orange" ></i><text style = "margin-left:20px">Help request from Lana</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">3 h</text></li>
+                <li class="list-group-item"><i class="fas fa-user-plus" style= "color:#318DE9" ></i><text style = "margin-left:20px">Bella joined your event for reservation task</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">1 d</text></li>
+              </ul>
+          </div>
+          </div>
+      </div>
+    </div>
+<!-- FILL OUT FORM -->
+<div id = "paper">
+
+			<h3  style = "color:#4286f4; text-align: center;">
+				Past event of John Smith
+			</h3>
+
+	<div class="row">
+		<div class="col-md-12">
+
+			<h5 class = "subLine" style = "color:#4286f4">
+				Event information:
+			</h5>
+      <table id="eventInfo" >
+        <tr class= "eventInfo"><!-- title -->
+          <td class = "firstCol"><label for="eventTitle" class = "form">Event title:</label></td>
+          <td class = "secondCol"><text type="text" class="form-control" id="eventTitle">Cooking national food</text></td>
+        </tr>
+          <tr class= "eventInfo"><!-- calendar-->
+              <td class = "firstCol" id="pickup_date"><label class="form">Date:</label> </td>
+              <td class = "secondCol" id = "clndr"><text type="date" class="textbox" id="pick_date" name="pickup_date" style="width:230px;height:37px" onchange="cal()"</p>  20/03/18</text></td>
+          </tr>
+          <tr class= "eventInfo"><!-- duration-->
+              <td class = "firstCol"><label class = "form">Expected duration:</label></td>
+              <td class = "secondCol"><text type="number" id="duration" name="duration" style="height:37px" min="1" max="20">3 hours<text></td>
+          </tr>
+
+          <tr class= "eventInfo">
+            <td class = "firstCol"><label for="location" class = "form">Location:</label></td>
+            <td class = "secondCol"> <text type="text" class="form-control" id="exampleInputEmail1">W2-1 KAIST, Multipurpose Hall</text></td>
+          </tr>
+          <tr>
+            <td class = "firstCol" id = "descr"><label for="description" class = "form">Description:</label></td>
+            <td class = "secondCol"><text class="form-control" id="description" placeholder="Please, write one or two paraghraphs about your event..." >Nepalise Cuisine combines a range of ingredients, techniques and characteristics from its neighboring countrie,s with its own gastronomic history.Nepalese dhal is a soupy dish, which is then poured over white rice to eat. It's up to you which lentils you choose. Split red lentils cook the fastest or choose split black urad dhal or split and de-husked mung dhal.</text></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+      </table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class = "subLine" style = "color:#4286f4">
+				Specify tasks for helpers:
+			</h5>
+      <table id ="helpTable">
+        <tbody>
+        <tr class = "helpRow">
+          <td class = "col1"><input type="text" id = "title"placeholder= "Reservation" style="width:230px;height:45px;";></input> <center><input type="number" id="pplNumber" style="height:45px; width: 230px" max = "30" min="1" placeholder = "3 people"></input></center></td>
+          <td class = "col2"><textarea class="form-control" id="descriptionOfTask" > Need to reserve Multipurpose hall and media equipment. Also keep keys</textarea></td></td>
+        </tr>
+        <tr class = "helpRow">
+          <td class = "col1"><input type="text" id = "title"placeholder= "Cooking" style="width:230px;height:45px;";></input> <center><input type="number" id="pplNumber" style="height:45px; width: 230px" max = "30" min="1" placeholder = "2 people"></input></center></td>
+          <td class = "col2"><textarea class="form-control" id="descriptionOfTask" > Need to learn how to cook sweets. Buy ingredients and cook in the kitchen.</textarea></td></td>
+        </tr>
+        <tr class = "helpRow">
+          <td class = "col1"><input type="text" id = "title"placeholder= "Music" style="width:230px;height:45px;";></input> <center><input type="number" id="pplNumber" style="height:45px; width: 230px" max = "30" min="1" placeholder = "1 person"></input></center></td>
+          <td class = "col2"><textarea class="form-control" id="descriptionOfTask" > Need to download national music and fix all apparature</textarea></td></td>
+        </tr>
+      </tbody>
+      </table>
+    <div class="row">
+      <div class="col-md-12">
+        <h5 class = "subLine" style = "color:#4286f4;   margin-top: 40px;">
+          Sent requests:
+        </h5>
+        <div style="margin-left: 30px;">
+        <table id = "reqTable" >
+<tr>
+  <td>Bauka2000: Cooking</td>
+</tr>
+<tr>
+  <td>Tosha99: Reservation</td>
+</tr>
+<tr>
+  <td>NaziyaZh: Music</td>
+</tr>
+        </table>
+      </div>
+      </div>
+    </div>
+		</div>
+	</div>
+
+<!-- <img id = "imagePerson" src="file:///Users/assem/Desktop/GitHub/SundaySiesta/create_page/src/6b7e95cf9c.svg" style="height:30px;"/> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/history.js"></script>
+
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+</div>
+
+
+
+  </body>
+</html>

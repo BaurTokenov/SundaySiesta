@@ -1,0 +1,46 @@
+.fillout input[type="checkbox"] + label {
+  /*color: black;*/
+  font-style: normal;
+} 
+
+
+.checkboxLabels {
+	font-size: 40px;
+}
+
+ .fillout input[type="checkbox"]:checked + label {
+  /*color: ;*/
+  /*font-style: italic;*/
+  /*color: #dbdbdb;*/
+  font-weight: 600;
+} 
+.fillout input[type="checkbox"]:disabled + label {
+  color: #727272;
+}
+
+
+.checkbox:checked {
+  font-style: oblique;
+  font-style: italic;
+
+  font-family: sans-serif;
+}
+
+.fillout {
+	display: none;
+}
+
+
+.checkbox {
+    margin-left: 40px;
+    
+}
+
+
+.eventFilter .checkbox {
+	float:left;
+
+}
+.checkboxLabels {
+	font-size: 40px;
+}
