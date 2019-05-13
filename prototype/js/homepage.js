@@ -283,7 +283,19 @@ $( document ).ready(function()	{
 		}
 	}
 	} 
+		$(".row").on('click', '#create_event', function () {
+  window.location.replace("create-event.html");
+  //   async function demo() {
+  // console.log('Taking a break...');
+  // await sleep(2000);
+  
+// } 
+
+demo();
+    
+})
 	// populateEvents();
 	f();
+
 
 });

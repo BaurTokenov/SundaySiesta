@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Q&A </title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="css/styleqa.css" rel="stylesheet"/>
+  <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="homepage.html">Home </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Events
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  active" href="QandA.html" tabindex="-1" aria-disabled="true">Q&A</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div  id = "notificationCanvas" style = "position:relative; right: 0;   z-index: 200; ">
+      <div style = "position:absolute; right: 0;" id = "bell">
+        <i class="fas fa-bell"  style=" font-size: 25px; margin-right: 15px; color:  #4286f4;"></i>
+      </div>
+      <div id="openNotif">
+        <div class="triangle-up" style = "position:absolute; right: 43px;top: 35px;"></div>
+          <div id = "notifPaper" style = "position:absolute; right: 0; overflow: scroll">
+            <div style="padding:20px;">
+              <text style = "font-weight: bold; font-size:16px; ">Notifications</text>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fas fa-check-circle" style= "color:green" ></i><div style = "margin-left:20px;">You have created new event!</div><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">1 min</text></li>
+                <li class="list-group-item"><i class="fas fa-handshake" style= "color:orange" ></i><text style = "margin-left:20px">Help request from Antonio</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">30 min</text></li>
+                <li class="list-group-item"><i class="fas fa-user-plus" style= "color:#318DE9" ></i><text style = "margin-left:20px">Julio joined your event for reservation task</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">1 h</text></li>
+                <li class="list-group-item"><i class="fas fa-question-circle"style= "color:#FB4E4E"></i><text style = "margin-left:20px">New question about food</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">3 h</text></li>
+                <li class="list-group-item"><i class="fas fa-handshake" style= "color:orange" ></i><text style = "margin-left:20px">Help request from Lana</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">3 h</text></li>
+                <li class="list-group-item"><i class="fas fa-user-plus" style= "color:#318DE9" ></i><text style = "margin-left:20px">Bella joined your event for reservation task</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">1 d</text></li>
+              </ul>
+          </div>
+          </div>
+      </div>
+    </div>
+
+
+  </nav>
+
+
+  <section id = "top-box">
+  <!-- <section class = "container">  -->
+    <h1 class="align-center">Find out the answer for your question...</h1>
+    <div class="input-group md-form form-sm form-2 pl-0" id="search-box">
+      <input class="form-control my-0 py-1"  type="text" onkeyup="myFunction()" placeholder="Search" id="search-bar" >
+
+      <div class="input-group-append">
+        <button class="input-group-text lime lighten-2" ><i class="fas fa-search text-grey" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <ul id="myUL" style = "display:none;" >
+      <li><a href="#" id="li1">Do we need to collect the plastic dish left after the event separately?</a></li>
+      <li><a href="#" id ="li2">How much did you spend on average for the event for around 20 people?</a></li>
+
+      <li><a href="#" id ="li3">Is it possible to get funding for the event from the university?</a></li>
+      <li><a href="food.html" id ="li4">What is the closest grocery shop?</a></li>
+
+      <li><a href="#" id ="li5">Where are the trash bins near the multipurpose hall in W2-1?</a></li>
+      <li><a href="food.html" id ="li6">Where can I order Halal meat?</a></li>
+      <li><a href="food.html" id ="li7">Where can I order fresh vegetables?</a></li>
+      <li><a href="food2.html#buttonfood1"id ="li8" action = "food.html" onclick = "questionFunction('food2')">Where is the most affordable market near the campus?</a></li>
+    </ul>
+    <div id="noResults" style="display:none;">No results found</div>
+    <!-- <button class="search-button" type="submit"><i class="fas fa-search"></i></button> -->
+
+  </section>
+  <!-- <h2 class="align-center">Questions and Answers</h2> -->
+
+<section class="bottom-section">
+<section class="row">
+  <div class="column"><a href="food.html">
+    Food</a>
+    <a class = "questions" href="food.html" style = "text-decoration: none;"><p>5 questions</p></a>
+  </div>
+  <div class="column"><a href="food.html">
+    Budget</a>
+  <a class = "questions" href="food.html"><p>7 questions</p></a>
+  </div>
+  <div class="column"><a href="food.html">
+    Scheduling</a>
+  <a class = "questions" href="food.html"><p>15 questions</p></a>
+  </div>
+</section>
+<div class="row">
+  <div class="column"><a href="food.html">Media</a>
+  <a class = "questions" href="food.html"><p>3 questions</p></a>
+  </div>
+  <div class="column"><a href="food.html">Reservation</a>
+  <a class = "questions" href="food.html"><p>19 questions</p></a>
+  </div>
+  <div class="column"><a href="food.html">Music</a>
+  <a class = "questions" href="food.html"><p>12 questions</p></a>
+  </div>
+</div>
+<div class="row">
+  <div class="column"><a href="food.html">Equipment</a>
+  <a class = "questions" href="food.html"><p>24 questions</p></a>
+  </div>
+  <div class="column"><a href="food.html">Garbage sorting</a><a class = "questions" href="food.html"><p>2 questions</p></a></div>
+  <div class="column"><a href="food.html">Other</a>
+    <a class = "questions" href="food.html"><p>21 questions</p></a></div>
+</div>
+
+
+<div >
+  <button  id = "newQ" class = "btn-primary center"><i class="fas fa-plus"></i>  Ask a question</button>
+  <div class= "row" id="askQ"  style="margin-top: 5%; display:none;">
+    <tr class= "eventInfo">
+      <td class = "firstCol"><label for="location" class = "form">Category:</label></td>
+      <td class = "secondCol">
+        <select id = "category" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+          <option value = "default" selected>Choose ...</option>
+          <option value="1">Budget</option>
+          <option value="2">Equipment</option>
+          <option value="3">Food</option>
+          <option value="4">Garbage Sorting</option>
+          <option value="5">Media</option>
+          <option value="6">Music</option>
+          <option value="7">Reservation</option>
+          <option value="8">Scheduling</option>
+          <option value="9s">Other</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td class = "firstCol"><label for="description" class = "form">Question:</label></td>
+      <td class = "secondCol"><textarea class="form-control" id="description" placeholder="Type your question..." ></textarea></td>
+    </tr>
+    <tr>
+      <!-- <div class = "row"> -->
+     <div class = "col-md-12">
+        <div class="text-right" style="margin-top: 2%; margin-bottom: 1%; margin-right: 1%">
+        <button id = "submit" type="submit" class="btn btn-primary my-1">Submit</button>
+
+        <button id = "cancel" type="submit" class="btn btn-secondary my-1">Cancel</button>
+        </div>
+      </div>
+      <div id = "alert" style = "display:none;" class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Warning!</strong> Fill all the fields above.
+  <button type="button" class="close" id = "alert-close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+    <!-- </div> -->
+    </tr>
+  </div>
+</div>
+
+
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/category.js"></script>
+<script src="js/qanda.js"></script>
+<script src="jquery/js/jquery-1.9.0.min.js"></script>
+<script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+<!-- <script>
+
+function questionFunction(a) {
+  $("#" + a).attr("aria-expanded", "true");
+  $("#" + a).addClass('show');
+  $("#button" + a).removeClass('collapsed');
+    $("#button" + a).attr("aria-expanded", "true");
+}
+
+</script> -->
+</body>
+</html>

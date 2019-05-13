@@ -1,0 +1,203 @@
+body {
+  margin-bottom: 10%;
+  /* margin-right: 10%; */
+  /* font-family: sans-serif; */
+}
+
+.questions {
+  position: relative;
+  text-align: right;
+  vertical-align: baseline;
+  font-size: 15px;
+  color: #4286f4;
+
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #4286f4;
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  width: 75%;
+  margin-left: 12.5%;
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+#noResults {
+  width: 75%;
+  margin-left: 12.5%;
+  background-color: #f6f6f6;
+  color: #D3D3D3;
+  padding: 12px;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+
+.bottom-section {
+    margin-left: 18%;
+    margin-right: 10%;
+}
+
+.center {
+  width: 30%;
+  height: 13px;
+  /* text-align: center; */
+  vertical-align: top;
+  padding: 1em 1em;
+  padding-bottom: 2em;
+  font-size: 20px;
+  margin-left: 245px;
+  margin-top: 7px;
+  /* background-color: powderblue; */
+  /* border: 2px solid black; */
+  /* border-radius: 50%; */
+  /* margin: 0 0 20px; */
+}
+
+.center:hover {
+  background-color: #4286f4;
+}
+
+.column {
+  font-size: 25px;
+  float: left;
+  width: 25%;
+  vertical-align: middle;
+  text-align: center;
+  border: 2px solid #6c757d;
+  display: inline-block;
+  height: 100px;
+  padding: 1em 1em;
+  margin: 0 1.8% 20px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.row {
+  font-size: 25px;
+}
+
+h1 {
+  vertical-align: top;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.search-bar {
+  width: 75%;
+  margin-left: 10%;
+  font-size: 17px;
+  border: none;
+  padding: 14px;
+  float: none;
+  margin-bottom: 2%;
+  display: inline-block;
+}
+
+#top-box button:hover {
+  background: #ccc;
+}
+
+.search-button {
+  cursor: pointer;
+  width: 4%;
+  padding: 15px 9px;
+  margin-top: 1px;
+  background: #ddd;
+  /* margin-right: 16px; */
+  font-size: 17px;
+  border: none;
+}
+
+.rowmy:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#search-box {
+  width: 75%;
+  margin-left: 12.5%;
+
+}
+
+
+#top-box {
+  padding: 2em;
+  margin-top: 4.8%;
+  margin-bottom: 3%;
+  background-color: #4286f4;
+  color: white;
+  /* #4286f4; */
+}
+
+#askQ {
+  padding: 10px;
+  margin: 7px;
+  width: 85%;
+  align-self: center;
+  height: 300px;
+  border: 4px solid #4286f4;
+}
+
+#alert {
+  font-size: 16px;
+}
+
+
+#bell{
+  margin-right: 2em;
+  margin-top: -0.7em;
+  z-index: -50;
+}
+
+#notifPaper{
+  width: 500px;
+  height: 300px;
+  margin-top: 40px;
+  margin-right: 15px;
+  background-color: #F2F3F1;
+  z-index: -70;
+  border-radius: 5px;
+
+}
+
+.list-group-item{
+  background-color: #F2F3F1;
+}
+
+.triangle-up {
+	width: 0px;
+	height: 50px;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 20px solid #F2F3F1;
+  margin-left: 350px;
+  margin-top: -45px;
+
+
+}
