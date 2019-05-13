@@ -1,55 +1,39 @@
 
-var sources = ["Bauak", "nai", "syau"]
-// ["Where can I order Halal meat?",
-// "Where is the most affordable market near the campus?",
-// "Where can I order fresh vegetables?",
-// "What is the closest grocery shop?",
-// "Where can I store food for the event on the campus?"]
-// {"category":"Food","question":"Where can I order Halal meat?"},
-// {"category":"Food","question":"Where is the most affordable market near the campus?"},
-// {"category":"Food","question":"Where can I order fresh vegetables?"},
-// {"category":"Food","question":"What is the closest grocery shop?"},
-// {"category":"Food","question":"Where can I store food for the event on the campus?"},
-// {"category":"Equipment","question":"Luanda"},
-// {"category":"Budget","question":"The Valley"},
-// {"category":"Budget","question":"Buenos Aires"},
-// {"category":"Budget","question":"Yerevan"},
-// {"category":"Reservation","question":"Canberra"}];
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  var check = 0;
+  input = document.getElementById('search-bar');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+    $("#noResults")[0].style.display = "none";
+  if (filter == "") {
+    ul.style.display = "none";
 
+  } else {
+    ul.style.display = "block";
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "block";
+        check = 1;
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+    if ( check == 0 ) {
+      $("#noResults")[0].style.display = "block";
+    }
+  }
 
+}
 
-$(function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    var x = $("#tags")
-    x.autocomplete ({
-      source: availableTags
-    })
-});
-
-// console.log($( "#search-bar" ));
-// $("#search-bar").autocomplete({
-//   source: sources
-// });
+function questionFunction(a) {
+  $("#" + a).attr("aria-expanded", "true");
+  $("#" + a).addClass('show');
+  $("#button" + a).removeClass('collapsed');
+    $("#button" + a).attr("aria-expanded", "true");
+}

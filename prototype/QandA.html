@@ -46,6 +46,31 @@
         </li>
       </ul>
     </div>
+
+
+    <div  id = "notificationCanvas" style = "position:relative; right: 0;   z-index: 200; ">
+      <div style = "position:absolute; right: 0;" id = "bell">
+        <i class="fas fa-bell"  style=" font-size: 25px; margin-right: 15px; color:  #4286f4;"></i>
+      </div>
+      <div id="openNotif">
+        <div class="triangle-up" style = "position:absolute; right: 43px;top: 35px;"></div>
+          <div id = "notifPaper" style = "position:absolute; right: 0; overflow: scroll">
+            <div style="padding:20px;">
+              <text style = "font-weight: bold; font-size:16px; ">Notifications</text>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="fas fa-check-circle" style= "color:green" ></i><div style = "margin-left:20px;">You have created new event!</div><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">1 min</text></li>
+                <li class="list-group-item"><i class="fas fa-handshake" style= "color:orange" ></i><text style = "margin-left:20px">Help request from Antonio</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">30 min</text></li>
+                <li class="list-group-item"><i class="fas fa-user-plus" style= "color:#318DE9" ></i><text style = "margin-left:20px">Julio joined your event for reservation task</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">1 h</text></li>
+                <li class="list-group-item"><i class="fas fa-question-circle"style= "color:#FB4E4E"></i><text style = "margin-left:20px">New question about food</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">3 h</text></li>
+                <li class="list-group-item"><i class="fas fa-handshake" style= "color:orange" ></i><text style = "margin-left:20px">Help request from Lana</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">3 h</text></li>
+                <li class="list-group-item"><i class="fas fa-user-plus" style= "color:#318DE9" ></i><text style = "margin-left:20px">Bella joined your event for reservation task</text><text style = "position: absolute; right:0px; color: #A5A5A5; font-size: 14px;">1 d</text></li>
+              </ul>
+          </div>
+          </div>
+      </div>
+    </div>
+
+
   </nav>
 
 
@@ -59,17 +84,17 @@
         <button class="input-group-text lime lighten-2" ><i class="fas fa-search text-grey" aria-hidden="true"></i></button>
       </div>
     </div>
-    <ul id="myUL" style = "display:none;">
-      <li><a href="#">Do we need to collect the plastic dish left after the event separately?</a></li>
-      <li><a href="#">How much did you spend on average for the event for around 20 people?</a></li>
+    <ul id="myUL" style = "display:none;" >
+      <li><a href="#" id="li1">Do we need to collect the plastic dish left after the event separately?</a></li>
+      <li><a href="#" id ="li2">How much did you spend on average for the event for around 20 people?</a></li>
 
-      <li><a href="#">Is it possible to get funding for the event from the university?</a></li>
-      <li><a href="food.html">What is the closest grocery shop?</a></li>
+      <li><a href="#" id ="li3">Is it possible to get funding for the event from the university?</a></li>
+      <li><a href="food.html" id ="li4">What is the closest grocery shop?</a></li>
 
-      <li><a href="#">Where are the trash bins near the multipurpose hall in W2-1?</a></li>
-      <li><a href="food.html">Where can I order Halal meat?</a></li>
-      <li><a href="food.html">Where can I order fresh vegetables?</a></li>
-      <li><a href="food.html#a2" onclick = "$(food.html).getElementById("a2").show()">Where is the most affordable market near the campus?</a></li>
+      <li><a href="#" id ="li5">Where are the trash bins near the multipurpose hall in W2-1?</a></li>
+      <li><a href="food.html" id ="li6">Where can I order Halal meat?</a></li>
+      <li><a href="food.html" id ="li7">Where can I order fresh vegetables?</a></li>
+      <li><a href="food2.html#buttonfood1"id ="li8" action = "food.html" onclick = "questionFunction('food2')">Where is the most affordable market near the campus?</a></li>
     </ul>
     <div id="noResults" style="display:none;">No results found</div>
     <!-- <button class="search-button" type="submit"><i class="fas fa-search"></i></button> -->
@@ -161,41 +186,19 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/category.js"></script>
 <script src="js/qanda.js"></script>
 <script src="jquery/js/jquery-1.9.0.min.js"></script>
 <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-<script>
-function myFunction() {
-  // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
-  var check = 0;
-  input = document.getElementById('search-bar');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName('li');
-    $("#noResults")[0].style.display = "none";
-  if (filter == "") {
-    ul.style.display = "none";
+<!-- <script>
 
-  } else {
-    ul.style.display = "block";
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      txtValue = a.textContent || a.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "block";
-        check = 1;
-      } else {
-        li[i].style.display = "none";
-      }
-    }
-    if ( check == 0 ) {
-      $("#noResults")[0].style.display = "block";
-    }
-  }
-
+function questionFunction(a) {
+  $("#" + a).attr("aria-expanded", "true");
+  $("#" + a).addClass('show');
+  $("#button" + a).removeClass('collapsed');
+    $("#button" + a).attr("aria-expanded", "true");
 }
-</script>
+
+</script> -->
 </body>
 </html>

@@ -10,15 +10,64 @@
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
 
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet"> -->
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/homepage.css" rel="stylesheet">
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
 
   </head>
   <body>
 
+<<<<<<< Updated upstream
     <div class="container-fluid" style="">
 		<div class="row" style="margin-top: 0.5%; background-color: white;z-index: 999;">
+=======
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="homepage.html">Home </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Events
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="QandA.html" tabindex="-1" aria-disabled="true">Q&A</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- <div class="container-fluid " style="margin-top: 20px">
+		<div class="row fixed-top">
+>>>>>>> Stashed changes
 			<div class="col-md-6" id = "myMenu">
 				<ul class="nav nav-pills">
 					<li class="nav-item">
@@ -37,7 +86,7 @@
 			</div>
 			<div class="col-md-6">
 			</div>
-		</div>
+		</div> -->
 
 		<div class="row" style="height: 200px; width:400px; margin-top: 100px; margin:0 auto">
 			<div class="col-md-12">
@@ -54,21 +103,21 @@
 							<div class="col-md-12" style = "background-color:#4286f4;;width: 100%;height: 50%" >
 								<!-- <div class = "row"> -->
 									<div class = "checkbox" >
-										<input type = "checkbox" id ="allCheckbox" name = "ossm" checked="checked"> 
-											<label class = "checkboxLabels" for="allCheckbox" style="">  
+										<input type = "checkbox" id ="allCheckbox" name = "ossm" checked="checked">
+											<label class = "checkboxLabels" for="allCheckbox" style="">
 												All
 											</label>
 									</div>
 									<div class = "checkbox" >
-										<input type = "checkbox" id="cookingCheckbox" name = "ossm"> 
-											<label class = "checkboxLabels" for="cookingCheckbox" style=""> 
-												Cooking 
+										<input type = "checkbox" id="cookingCheckbox" name = "ossm">
+											<label class = "checkboxLabels" for="cookingCheckbox" style="">
+												Cooking
 											</label>
 									</div>
 									<div class = "checkbox">
-										<input type = "checkbox" id ="dancingCheckbox" name = "ossm"> 
-											<label class = "checkboxLabels" for="dancingCheckbox" style=""> 
-												Dancing 
+										<input type = "checkbox" id ="dancingCheckbox" name = "ossm">
+											<label class = "checkboxLabels" for="dancingCheckbox" style="">
+												Dancing
 											</label>
 									</div>
 									<div class = "checkbox">
@@ -78,9 +127,9 @@
 											</label>
 									</div>
 									<div class = "checkbox">
-										<input type = "checkbox" id ="otherCheckbox" name = "ossm"> 
-											<label class = "checkboxLabels" for="otherCheckbox" style=""> 
-												Other 
+										<input type = "checkbox" id ="otherCheckbox" name = "ossm">
+											<label class = "checkboxLabels" for="otherCheckbox" style="">
+												Other
 											</label>
 									</div>
 								<!-- </div> -->
@@ -109,14 +158,14 @@
 						<div  class = "fillout" style="text-align: center">
 							<h1> I am from Kazakhstan </h1>
 							<h1> I am from Kazakhstan </h1>
-							
+
 						</div>
 					</div>
 					<!-- <div class = "col-md-6" id = "join" style="width:50%;border: 1px solid black;">
-						
+
 					</div> -->
 
-					
+
 					<div class="col-md-6 dancingEvent" >
 						<div style="text-align: left;" class = "eventDescr">
 							<h4>Title: Dancing event</h4>
@@ -131,21 +180,21 @@
 							<h3 style="text-align: left;margin-top: 3%"> Title: Blah Blah</h3>
 							<div class = "row" style="margin-top: 1%">
 								<div class = "checkbox" >
-									<input type = "checkbox" class = "helpCheckbox" id ="cookingHelp" name = "ossm"> 
-									<label class = "checkboxLabels" for="cookingHelp" style="">  
+									<input type = "checkbox" class = "helpCheckbox" id ="cookingHelp" name = "ossm">
+									<label class = "checkboxLabels" for="cookingHelp" style="">
 										Cooking
 									</label>
 								</div>
 								<div class = "checkbox" >
-									<input type = "checkbox" class = "helpCheckbox"  id="speakerHelp" name = "ossm"> 
-									<label class = "checkboxLabels" for="speakerHelp" style=""> 
-										Reservation of speaker 
+									<input type = "checkbox" class = "helpCheckbox"  id="speakerHelp" name = "ossm">
+									<label class = "checkboxLabels" for="speakerHelp" style="">
+										Reservation of speaker
 									</label>
 								</div>
 								<div class = "checkbox">
-									<input type = "checkbox" class = "helpCheckbox"  id ="roomHelp" name = "ossm"> 
-									<label class = "checkboxLabels" for="roomHelp" style=""> 
-										Reservation of room 
+									<input type = "checkbox" class = "helpCheckbox"  id ="roomHelp" name = "ossm">
+									<label class = "checkboxLabels" for="roomHelp" style="">
+										Reservation of room
 									</label>
 								</div>
 							</div>
@@ -164,7 +213,7 @@
 							</div>
 						</div>
 						<div  class = "fillout" style="text-align: center">
-								
+
 						</div>
 					</div>
 					<div class="col-md-6 otherEvent" >
@@ -207,7 +256,7 @@
 							</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 		<div class = "row">
@@ -215,10 +264,12 @@
 			</div>
 		</div>
 	</div>
-	
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/homepage.js"></script>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
   </body>
 </html>
