@@ -265,10 +265,10 @@ $( document ).ready(function()	{
 	});
 	async function f() {
 		var kek1 = writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
-			'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 4, 3, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 0, 0]], 'index': 0, 'userCreate': 0, 'type': dancingEvent})
+			'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 4, 3, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 0, 0]], 'index': 0, 'userCreate': 0, 'type': `dancingEvent`})
 				
 		var kek2 = writeToDatabase({'title': "Gaf_gaf_gaf", 'description': "gaf blah gaf blah blah", 
-			'date': '2019.05.31', "type": "cookingEvent", "help": [['cooking', 2, 2, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 1, 1]], 'index': 1, 'userCreate': 1, 'type': cookingEvent})
+			'date': '2019.05.31', "type": "cookingEvent", "help": [['cooking', 2, 2, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 1, 1]], 'index': 1, 'userCreate': 1, 'type': `cookingEvent`})
 		// readFromDatabase();	
 		var kek3 = await kek1;
 		var kek4 = await kek2;

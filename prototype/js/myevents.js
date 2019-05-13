@@ -23,8 +23,8 @@ $(document).ready(function () {
 		for (var i = 0; i < myCreatedEvents.length; ++i) {
 			var markup;
 			curEvent = myCreatedEvents[i];
-			markup = `<div class ="row myEvents" style = "background-color: white; width: 100%; margin: 0 auto;margin-top: 2%">`
-			 			`<div class="col-md-8` + curEvent.type +  `" style="border: 2px solid black">
+			markup = `<div class ="row myEvents" style = "background-color: white; width: 100%; margin: 0 auto;margin-top: 2%">
+			 				<div class="col-md-8` + curEvent.type +  `" style="border: 2px solid black">
 			 				<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
 								<button type="button" class="btn btn-primary editOwn" > Edit </button>
 							</div>
@@ -54,7 +54,7 @@ $(document).ready(function () {
 									</div>
 	      						</div>
       						</div>
-      					</div>
+      					</div>`
 						
 
 
