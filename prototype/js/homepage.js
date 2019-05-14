@@ -37,6 +37,17 @@ $( document ).ready(function()	{
 		}
 		return ans;
 	}
+
+	function parseForDB(s) {
+		ans = ""
+		for (var i = 0; i < s.length; ++i) {
+			if (s[i] == ' ')
+				ans += '_'
+			else
+				ans += s[i].toLowerCase();
+		}
+		return ans;
+	}
 	async function populateEvents() {
 		// var checkPopulate =  readFromDatabase();
 		// var checkPopulate1 = await checkPopulate;
@@ -67,9 +78,9 @@ $( document ).ready(function()	{
 			 									<button type="button" class="btn btn-primary editButton" > Edit </button>
 			 									</div>`
 			 					}
-			 			markup += `</div>`
+			 			
 			// $('#events').append(markup);
-				   markup+=`<div class = "fillout" style="text-align: center">
+				   markup+=`<div class = "fillout" style="text-align: center;background-color:white;">
 								<h2 style = "margin-top:2%"> How would you like to help the organizer? </h2>
 								<div class = "row" style="margin-top: 1%">`
 								// <h3 style="text-align: left;margin-top: 3%"> Title: ` + curEvent.title +` </h3>
@@ -106,13 +117,14 @@ $( document ).ready(function()	{
 					 			<h4> Description: ` + curEvent.description + `</h4>
 			 					<h4> Date: ` + curEvent.date + `</h4>`
 			 					
-			 						markup += `<p class = "mb-0"> You are the creator of this event, to change it, go to the My EVents page</p>`
+			 						markup += `<p class = "mb-0"> You are the creator of this event.</p>`
 			 						// <div class="text-right" style="margin-bottom: 1%; margin-right: 1%"> 
 			 						// 			<button type="button" class="btn btn-primary editButton" > Edit </button>
 			 						// 			</div>`
 			 					
 			 			markup += `</div>`
 			 	}
+			 	markup += `</div>`
 			$('#events').append(markup)
 			}
 			
@@ -138,7 +150,8 @@ $( document ).ready(function()	{
 
 
 	$(".row").on('click','.joinButton',function(){
-			var x = ($(this).closest('div').parent().parent().children('.fillout'))
+			var x = ($(this).closest('div')).parent().children('.fillout');
+				// .parent().parent()..children('.fillout'))
 			x.animate( { "opacity": "show", top:"100"} , 500 );
 			
      });
@@ -168,7 +181,7 @@ $( document ).ready(function()	{
 			// console.log(ind.attr('class'))
 		var x = ($(this).closest('div').parent().parent().children('.eventDescr'))
 			x.animate( { "opacity": "show", top:"100"} , 500 );
-		var y = ($(this).closest('div').parent().parent().prop('class'));
+		var y = ($(this).closest('div').parent().parent().parent().prop('class'));
 		console.log(y);
 		var ind = y[y.length - 1]
 		var curEvent = events[ind];
@@ -188,19 +201,18 @@ $( document ).ready(function()	{
 				}
 			// }
 		}
-		curEvent.join_status = true;
+		writeToDatabase({'title': curEvent.title, 'description': curEvent.description, 
+			'date': curEvent.date, "type": curEvent.type, "help": curEvent.help, 'index': curEvent.index, 'userCreate': 0, 'type': event.type, 'userCreate': 0})
+
+		// curEvent.join_status = true;
 		
 		populateEvents();
      });
 	
 	$(".row").on('click','.editButton',function(){
-		var x = ($(this).closest('div').parent().parent().children('.fillout'))
-		x.animate( { "opacity": "show", top:"100"} , 500 );
-		var y = ($(this).closest('div').parent().parent().prop('class'));
-		var ind = y[y.length - 1]
-		var curEvent = events[ind];
-		states = []
-		
+			var x = ($(this).closest('div')).parent().children('.fillout');
+				// .parent().parent()..children('.fillout'))
+			x.animate( { "opacity": "show", top:"100"} , 500 );
      });
 
 		
@@ -264,15 +276,15 @@ $( document ).ready(function()	{
 
 	});
 	async function f() {
-		var kek1 = writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
-			'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 4, 3, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 0, 0]], 'index': 0, 'userCreate': 0, 'type': `dancingEvent`})
+		// var kek1 = writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
+		// 	'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 4, 3, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 0, 0]], 'index': 0, 'userCreate': 0, 'type': `dancingEvent`})
 				
-		var kek2 = writeToDatabase({'title': "Gaf_gaf_gaf", 'description': "gaf blah gaf blah blah", 
-			'date': '2019.05.31', "type": "cookingEvent", "help": [['cooking', 2, 2, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 1, 1]], 'index': 1, 'userCreate': 1, 'type': `cookingEvent`})
-		// readFromDatabase();	
-		var kek3 = await kek1;
-		var kek4 = await kek2;
-		if (kek3 && kek4) {
+		// var kek2 = writeToDatabase({'title': "Gaf_gaf_gaf", 'description': "gaf blah gaf blah blah", 
+		// 	'date': '2019.05.31', "type": "cookingEvent", "help": [['cooking', 2, 2, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 1, 1]], 'index': 1, 'userCreate': 1, 'type': `cookingEvent`})
+		// // readFromDatabase();	
+		// var kek3 = await kek1;
+		// var kek4 = await kek2;
+		// if (kek3 && kek4) {
 		var checkPopulate =  readFromDatabase();
 		var checkPopulate1 = await checkPopulate;
 		// checkPopulate1 = true;
@@ -281,8 +293,9 @@ $( document ).ready(function()	{
 
 			populateEvents();
 		}
-	}
+	// }
 	} 
+	f();
 		$(".row").on('click', '#create_event', function () {
   window.location.replace("create-event.html");
   //   async function demo() {
@@ -291,7 +304,7 @@ $( document ).ready(function()	{
   
 // } 
 
-demo();
+// demo();
     
 })
 	// populateEvents();

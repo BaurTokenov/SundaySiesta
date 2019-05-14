@@ -82,11 +82,11 @@
         </tr>
           <tr class= "eventInfo"><!-- calendar-->
               <td class = "firstCol" id="pickup_date"><label class="form">Date:</label> </td>
-              <td class = "secondCol" id = "clndr">  <input type="date" class="textbox" id="pick_date" name="pickup_date" style="width:230px;height:37px" onchange="cal()"</p></td>
+              <td class = "secondCol" id = "clndr">  <input type="date" class="textbox" id="pick_date" name="pickup_date" style="width:230px;height:37px" onchange="cal()"></p></td>
           </tr>
           <tr class= "eventInfo"><!-- duration-->
               <td class = "firstCol"><label class = "form">Expected duration:</label></td>
-              <td class = "secondCol"><input type="number" id="duration" name="duration" style="height:37px" min="1" max="20"> hours</td>
+              <td class = "secondCol"><input type="number" id="durationInput" name="duration" style="height:37px" min="1" max="20"> hours</td>
           </tr>
           <tr class= "eventInfo">
             <td class = "firstCol"><label for="image" class = "form">Add image:</label></td>
@@ -94,15 +94,23 @@
           </tr>
           <tr class= "eventInfo">
             <td class = "firstCol"><label for="location" class = "form">Location:</label></td>
-            <td class = "secondCol"> <input type="text" class="form-control" id="exampleInputEmail1"></td>
+            <td class = "secondCol"> <input type="text" class="form-control" id="locationInput"></td>
           </tr>
           <tr>
             <td class = "firstCol" id = "descr"><label for="description" class = "form">Description:</label></td>
             <td class = "secondCol"><textarea class="form-control" id="description" placeholder="Please, write one or two paraghraphs about your event..." ></textarea></td>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
+            <td class = "firstCol"><label for="categorySelection" class = "form">Event type</label></td>
+            <td class = "secondCol">
+              <select id = "categorySelection" class="custom-select my-1 mr-sm-2">
+                <option value = "default" selected>Choose ...</option>
+                <option value="cookingEvent">Cooking</option>
+                <option value="dancingEvent">Dancing</option>
+                <option value="tradGamesEvent">Traditional games</option>
+                <option value="otherEvent">Other</option>
+              </select>
+            </td>
           </tr>
       </table>
 		</div>
@@ -116,13 +124,13 @@
         <tbody>
         <tr class = "helpRow">
           <td class = "col0"><button type = "button"; class = "remove" ; > Remove </button></td>
-          <td class = "col1"><input type="text" id = "title"placeholder= "Task title" style="width:230px;height:45px;";></input> <center><input type="number" id="pplNumber" style="height:45px; width: 230px" max = "30" min="1" placeholder = "Number of helpers"></input></center></td>
-          <td class = "col2"><textarea class="form-control" id="descriptionOfTask" placeholder="Describe responsibilities" ></textarea></td></td>
+          <td class = "col1"><input type="text" class = "helpTitle" placeholder= "Task title" style="width:230px;height:45px;";></input> <center><input type="number" class="pplNumber" style="height:45px; width: 230px" max = "30" min="1" placeholder = "Number of helpers"></input></center></td>
+          <td class = "col2"><textarea class="form-control descriptionOfHelp" placeholder="Describe responsibilities" ></textarea></td></td>
         </tr>
         <tr class = "helpRow">
           <td class = "col0"><button type = "button"; class = "remove" ; > Remove </button></td>
-          <td class = "col1"><input type="text" id = "title"placeholder= "Task title" style="width:230px;height:45px;";></input> <center><input type="number" id="pplNumber" style="height:45px; width: 230px" max = "30" min="1" placeholder = "Number of helpers"></input></center></td>
-          <td class = "col2"><textarea class="form-control" id="descriptionOfTask" placeholder="Describe responsibilities" ></textarea></td></td>
+          <td class = "col1"><input type="text" class = "helpTitle" placeholder= "Task title" style="width:230px;height:45px;";></input> <center><input type="number" class="pplNumber" style="height:45px; width: 230px" max = "30" min="1" placeholder = "Number of helpers"></input></center></td>
+          <td class = "col2"><textarea class="form-control descriptionOfHelp" placeholder="Describe responsibilities" ></textarea></td></td>
         </tr>
       </tbody>
       </table>
@@ -151,15 +159,17 @@
 	</div>
 
 <!-- <img id = "imagePerson" src="file:///Users/assem/Desktop/GitHub/SundaySiesta/create_page/src/6b7e95cf9c.svg" style="height:30px;"/> -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/create_event.js"></script>
 
-    <script src="jquery1/js/jquery-1.9.0.min.js"></script>
-    <script src="jquery1/js/jquery-ui-1.10.0.custom.min.js"></script>
+
 </div>
 
-
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="jquery1/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery1/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script src="js/tables.js"></script>
+    <script src="js/create_event.js"></script>
 
   </body>
 </html>

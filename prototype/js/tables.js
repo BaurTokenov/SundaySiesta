@@ -57,6 +57,7 @@ function writeToDatabase(event) {
 			return;
 	var newKey = database.ref('/allEvents/').child('event' + event.index)
 	newKey.set ({
+		index: event.index,
 		title: event.title,
 		description: event.description,
 		date: event.date,
@@ -66,13 +67,13 @@ function writeToDatabase(event) {
 	var newKey = database.ref('/allEvents/event' + event.index + '/').child('helpers');
 	for (var i = 0; i < event.help.length; ++i) {
 		var x = 'help' + i;
-		var newKey = database.ref('/allEvents/event' + event.index + '/helpers').child(x);
+		var newKey = database.ref('/allEvents/event' + event.index + '/helpers/').child(x);
 		newKey.set ({
 			name: event.help[i][0],
 			needed: event.help[i][1],
 			joined: event.help[i][2],
 			userJoin: event.help[i][3],
-			
+			description: event.help[i][4]
 	})
 	}
 	return true;
@@ -105,7 +106,7 @@ function readFromDatabase() {
 			var str = 'help' + (j).toString();	
 			// var xd = str.length;
 			var curHelpNode = curEvent.helpers[str]
-			curHelpList.push([curHelpNode.name, curHelpNode.needed, curHelpNode.joined, curHelpNode.userJoin])
+			curHelpList.push([curHelpNode.name, curHelpNode.needed, curHelpNode.joined, curHelpNode.userJoin, curHelpNode.description])
 		}
 
 		// var str = 'help' + (parseInt(key, 10) + 1).toString();
@@ -125,7 +126,7 @@ function readFromDatabase() {
 		// 		var curHelpNode = curHelpTable[curHelpKeys[i]]
 		
 		// 	}
-			var x = {'title': curEvent.title, 'type': curEvent.type, 'date': curEvent.date,'description': curEvent.description, 'help': curHelpList, join_status: false, userCreate: curEvent.userCreate} 
+			var x = {'title': curEvent.title, 'index': curEvent.index,'type': curEvent.type, 'date': curEvent.date,'description': curEvent.description, 'help': curHelpList, join_status: false, userCreate: curEvent.userCreate} 
 			events.push(x);
 // 'date': '2019.05.31', "type": "cookingEvent", "help": [['cooking', 2, 2, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 1, 1]], "join_status": true }
 		// })

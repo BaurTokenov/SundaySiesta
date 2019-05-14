@@ -1,5 +1,16 @@
-$(document).ready(function () {
-
+	$(document).ready(function () {
+	// var kek1 = writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
+	// 		'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 3, 3, 0], ['reservation_of_speaker', 1, 0, 0],
+	// 		 ['reservation_of_room', 1, 0, 0]], 'index': 0, 'userCreate': 1, 'type': `otherEvent`})
+	// writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
+	// 		'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 3, 3, 0], ['reservation_of_speaker', 1, 0, 0],
+	// 		 ['reservation_of_room', 1, 0, 0]], 'index': 1, 'userCreate': 1, 'type': `otherEvent`})
+	// writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
+	// 		'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 3, 3, 0], ['reservation_of_speaker', 1, 0, 0],
+	// 		 ['reservation_of_room', 1, 0, 0]], 'index': 2, 'userCreate': 1, 'type': `otherEvent`})
+	// writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
+	// 		'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 3, 3, 1], ['reservation_of_speaker', 1, 0, 0],
+	// 		 ['reservation_of_room', 1, 0, 0]], 'index': 3, 'userCreate': 0, 'type': `otherEvent`})
 	function parse_string(s) {
 		ans = ""
 		for (var i = 0; i < s.length; i++) {
@@ -18,48 +29,88 @@ $(document).ready(function () {
 	
 
 	function populateEvents(check) {
+		var participantNames = ['Pablo Escobar', 'Antonio Vivaldi', 'Beethoven', 'Joseph Stalin', 'Tovarisch Lenin']
 		$(".otherEvents").empty();
-
+		$(".myEvents").empty();
+		if (myCreatedEvents.length == 0) {
+			var markup = `<div class = "col-md-12">
+						<h2> You have no created events </h2>
+						 
+					  </div>
+					  <div class="col-md-12">
+							<button type = "button"; id = "create_event">
+							Create event
+							</button>
+			</div>
+			`
+			$(".myEvents").append(markup)
+		}
 		for (var i = 0; i < myCreatedEvents.length; ++i) {
 			var markup;
 			curEvent = myCreatedEvents[i];
-			markup = `<div class ="row myEvents" style = "background-color: white; width: 100%; margin: 0 auto;margin-top: 2%">
-			 				<div class="col-md-8` + curEvent.type +  `" style="border: 2px solid black">
-			 				<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
-								<button type="button" class="btn btn-primary editOwn" > Edit </button>
-							</div>
-						<div class="accordion" id = "accordion` + curEvent.title +  `"">
-    						<div class="card-header col-md-7" style="background-color: white">
+			if (i == 0)
+			markup = `<div class="col-md-8 ` + curEvent.type + `" style="border: 2px solid black">`
+			else
+			markup = `<div class="col-md-8 ` + curEvent.type + `" style="border: 2px solid black;border-top:none">`
+			markup +=	`<div style="text-align: left;" class = "eventDescr">
+					<h4>Title:` + curEvent.title + `</h4>
+					<h4>Description: ` + curEvent.description+ ` </h4>
+					<h4>Date: ` + curEvent.date + `</h4>
+					<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
+						<button type="button" class="btn btn-primary editOwn" > Edit </button>
+					</div>
+					<div class="accordion" id="accordion` + curEvent.index + `">
+						 
+    						<div class="card-header col-md-7" id="headingOne` + curEvent.index +`" style="background-color: white">
 					      		<h2 class="mb-0">
-					        		<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#list` + curEvent.title + `" aria-expanded="true" aria-controls="collapseOne">
+					        		<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse` + curEvent.index + `" aria-expanded="true" aria-controls="collapseOne">
 					          			Participants list
 					        		</button>
 					      		</h2>
 							</div>
-						<div id="` + curEvent.title + `" class="collapse hide col-md-7" aria-labelledby="headingOne" data-parent="#accordion` + curEvent.title +`" style="margin-top: 1%">
-		      					<div class="card-body">
-		      						<div style="margin-bottom: : 3%">
-		      							<h2> Helpers1 <p style="display: inline;">` + curEvent.help[2].toString() + `/`  + curEvent.help[1].toString() + `</p></h2>
-		        						<ul class="list-group">
-									  	  <li class="list-group-item">  </li>
-										</ul>
-									</div>	
-									<div style="margin-bottom: 5%">
-										<h2> Helpers2 <p style="display: inline;"	> 3/3 </p></h2>
-	        							<ul class="list-group">
-									  	  <li class="list-group-item"> Participant </li>
-										  <li class="list-group-item"> Participant </li>
-										  <li class="list-group-item"> Participant </li>
-										</ul>
-									</div>
-	      						</div>
-      						</div>
-      					</div>`
 						
+					<div id="collapse` + curEvent.index + `" class="collapse hide col-md-7" aria-labelledby="headingOne` + curEvent.index +`" data-parent="#accordion` + curEvent.index+`" style="margin-top: 1%">
+      					<div class="card-body">`
+      					for (var j = 0; j < curEvent.help.length; ++j) {
+      						markup += `<div style="margin-bottom: : 3%">
+      							<h2> ` + curEvent.help[j][0] + `<p style="display: inline;">` + ' ' + curEvent.help[j][2].toString() + '/' + curEvent.help[j][1].toString() + `</p></h2>
+        						<ul class="list-group">`
+        						if (curEvent.help[j][2] == 0) {
+        							markup += 	`<li class="list-group-item">` + 'Noone has entered yet' +  `</li>`
+        						}
+								 for (var k = 0; k < curEvent.help[j][2]; ++k) {
+								  		markup += `<li class="list-group-item">` + participantNames[k % 4] +  `</li>`
+									}
+								
+								markup += `</ul>
 
-
+							</div>`
+						}
+							
+  						markup += `</div>
+  					</div>
+  					</div>
+  				</div>
+  			</div>
+  			<div class = "col-md-4">
+  			</div>`
+  			$(".myEvents").append(markup);
 		}
-
+		
+		if (myJoinedEvents.length == 0) {
+			var markup = `<div class = "col-md-8">
+							<h2> You have no joined events. You can join events from the home page </h2>
+  		  	 	 	    </div>
+  		  	 	 	      <div class="col-md-12">
+							<button type = "button"; id = "go_home_page">
+								Go to Home page
+							</button>
+						</div>
+  		  	 	 	    
+						
+			`
+			$(".otherEvents").append(markup)
+		}
 		for (var i = 0; i < myJoinedEvents.length; i++) {
 			curEvent = myJoinedEvents[i];
 			curEvent.join_status = false;
@@ -123,7 +174,7 @@ $(document).ready(function () {
 							</div>
 						</div>`
 			$('.otherEvents').append(markup)
-		}
+			}
 		$(".fillout input[type=checkbox]").change(function () {
 			var x = ($(this).parent());
 			var z = x.find(".helpersNumbers p");
@@ -180,6 +231,9 @@ $(document).ready(function () {
 			}
 
 		}
+		writeToDatabase({'title': curEvent.title, 'description': curEvent.description, 
+			'date': curEvent.date, "type": curEvent.type, "help": curEvent.help, 'index': curEvent.index, 'userCreate': 0, 'type': event.type, 'userCreate': 0})
+
 		populateEvents();
      });
 	async function f() {
@@ -199,7 +253,31 @@ $(document).ready(function () {
 			populateEvents();
 		// }
 		}
-	} 
+			$(".row").on('click', '#create_event', function () {
+  	window.location.replace("create-event.html");
+  	//   async function demo() {
+  	// console.log('Taking a break...');
+  	// await sleep(2000);
+	  
+	// } 
+	
+	// demo();
+	    
+	}) 
+				$(".row").on('click', '#go_home_page', function () {
+  	window.location.replace("homepage.html");
+  	//   async function demo() {
+  	// console.log('Taking a break...');
+  	// await sleep(2000);
+	  
+	// } 
+	
+	// demo();
+	    
+	}) 
+
+	}
+
 	f();
 
 })	

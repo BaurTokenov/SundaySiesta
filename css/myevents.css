@@ -3,6 +3,43 @@
   font-style: normal;
 } 
 
+#create_event {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: None;
+  background-color: #4286f4;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  width: 300px;
+  height: 100px;
+  margin-top: 50px;
+  font-size: 30px; 
+}
+#create_event:hover {
+  background-color: #154a96; 
+  
+}
+
+#go_home_page {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: None;
+  background-color: #4286f4;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  width: 300px;
+  height: 100px;
+  margin-top: 50px;
+  font-size: 30px; 
+}
+#go_home_page:hover {
+  background-color: #154a96; 
+  
+}
+
+
 
 .checkboxLabels {
 	font-size: 40px;
