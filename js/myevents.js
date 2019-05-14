@@ -56,9 +56,7 @@
 					<h4>Title:` + curEvent.title + `</h4>
 					<h4>Description: ` + curEvent.description+ ` </h4>
 					<h4>Date: ` + curEvent.date + `</h4>
-					<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
-						<button type="button" class="btn btn-primary editOwn" > Edit </button>
-					</div>
+					
 					<div class="accordion" id="accordion` + curEvent.index + `">
 						 
     						<div class="card-header col-md-7" id="headingOne` + curEvent.index +`" style="background-color: white">
