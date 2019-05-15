@@ -3,7 +3,7 @@ function questionFunction(a) {
   $("#" + a).attr("aria-expanded", "true");
   $("#" + a).addClass('show');
   $("#button" + a).removeClass('collapsed');
-    $("#button" + a).attr("aria-expanded", "true");
+  $("#button" + a).attr("aria-expanded", "true");
 }
 
 function myFunction() {

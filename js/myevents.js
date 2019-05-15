@@ -46,18 +46,22 @@
 			$(".myEvents").append(markup)
 		}
 		for (var i = 0; i < myCreatedEvents.length; ++i) {
-			var markup;
 			curEvent = myCreatedEvents[i];
-			if (i == 0)
-			markup = `<div class="col-md-8 ` + curEvent.type + `" style="border: 2px solid black">`
-			else
-			markup = `<div class="col-md-8 ` + curEvent.type + `" style="border: 2px solid black;border-top:none">`
-			markup +=	`<div style="text-align: left;" class = "eventDescr">
-					<h4>Title:` + curEvent.title + `</h4>
-					<h4>Description: ` + curEvent.description+ ` </h4>
-					<h4>Date: ` + curEvent.date + `</h4>
-					
-					<div class="accordion" id="accordion` + curEvent.index + `">
+		var markup = `<div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              
+            </a>
+          <div class="portfolio-caption">
+            <h4>`  + parse_string(curEvent.title) + `</h4>
+            <p class = "text-muted">` +curEvent.date +`</p><br>
+            <div style = "margin-bottom: 5px">  Description:  ` + curEvent.description + `  
+            </div>
+            <div class="accordion" id="accordion` + curEvent.index + `">
 						 
     						<div class="card-header col-md-7" id="headingOne` + curEvent.index +`" style="background-color: white">
 					      		<h2 class="mb-0">
@@ -89,12 +93,10 @@
   					</div>
   					</div>
   				</div>
-  			</div>
-  			<div class = "col-md-4">
   			</div>`
+  			
   			$(".myEvents").append(markup);
 		}
-		
 		if (myJoinedEvents.length == 0) {
 			var markup = `<div class = "col-md-8">
 							<h2> You have no joined events. You can join events from the home page </h2>
@@ -118,16 +120,21 @@
 					break;
 				}
 			}
-			var markup;
-			if (i != myJoinedEvents.length - 1)
-				markup = `<div class="col-md-8 `  + curEvent.type + ` z` + i.toString() + `" style = "border: 1px solid black; border-botttom: none">`
-			else
-				markup = `<div class="col-md-8 `  + curEvent.type + ` z` + i.toString() + `" style = "border: 1px solid black">`
-			markup += 		`<div style="text-align: left;margin-top: 2%" class = "eventDescr">
-		 						<h4> Title: ` + parse_string(curEvent.title) + `</h4>
-					 			<h4> Description: ` + curEvent.description + `</h4>
-			 					<h4> Date: ` + curEvent.date + `</h4>`
-			 					if (!curEvent.join_status) {
+			var markup = `<div class="col-md-4 col-sm-6 portfolio-item ` + curEvent.type + ` z` + i.toString()  + `">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              
+            </a>
+            <div class="portfolio-caption">
+              <h4>` + curEvent.title + `</h4>
+              <p class = "text-muted"> ` + curEvent.date  + `</p><br>
+              <div style = "margin-bottom: 5px">  Description: ` + curEvent.description + `
+              </div>`;
+            if (!curEvent.join_status) {
 			 						markup += `<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
 				 						<button type="button" class="btn btn-primary joinButton" > Join </button>
 			 						</div>`
@@ -172,7 +179,7 @@
 							</div>
 						</div>`
 			$('.otherEvents').append(markup)
-			}
+		}
 		$(".fillout input[type=checkbox]").change(function () {
 			var x = ($(this).parent());
 			var z = x.find(".helpersNumbers p");
@@ -252,7 +259,7 @@
 		// }
 		}
 			$(".row").on('click', '#create_event', function () {
-  	window.location.replace("create-event.html");
+  	window.location.replace("create_new.html");
   	//   async function demo() {
   	// console.log('Taking a break...');
   	// await sleep(2000);

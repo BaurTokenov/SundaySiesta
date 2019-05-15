@@ -8,16 +8,17 @@
 	font-size: 40px;
 }
 
-.eventFilter input[type="checkbox"] + label {
+/*.eventFilter input[type="checkbox"] + label {
   color: #dbdbdb;
   font-style: normal;
 } 
 .eventFilter input[type="checkbox"]:checked + label {
   /*color: ;*/
   /*font-style: italic;*/
-  color: #ffff;
+/*  color: #ffff;
   font-weight: bolder;
 } 
+*/*/
 
 .fillout input[type="checkbox"] + label {
   /*color: black;*/
@@ -29,6 +30,7 @@
   /*color: #dbdbdb;*/
   font-weight: 600;
 } 
+
 .fillout input[type="checkbox"]:disabled + label {
   color: #727272;
 }
@@ -50,10 +52,11 @@
 .checkbox {
     margin-left: 40px;
 }
-.eventFilter .checkbox {
+
+/*.eventFilter .checkbox {
 	float:left;
 
-}
+}*/
 
 
 /*.checkboxLabels input {

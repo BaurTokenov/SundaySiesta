@@ -53,6 +53,14 @@ $( document ).ready(function()	{
 		// var checkPopulate1 = await checkPopulate;
 		
 		$("#events").empty();
+		if (events.length == 0) {
+			var markup = `<div class="col-md-4 col-sm-6 portfolio-item ` + curEvent.type + ` z` + i.toString() +  `">
+							<h2> There are no events currently :( </h2>
+  		  	 	 	    </div>
+			`
+			$(".events").append(markup)
+			return;
+		}
 		for (var i = 0; i < events.length; i++) {
 			curEvent = events[i];
 			curEvent.join_status = false;
@@ -63,31 +71,39 @@ $( document ).ready(function()	{
 				}
 
 			}
-			var markup = `<div class="col-md-6 `  + curEvent.type + ` z` + i.toString() + `">
-			 				<div style="text-align: left;margin-top: 2%" class = "eventDescr">
-		 						<h4> Title: ` + parse_string(curEvent.title) + `</h4>
-					 			<h4> Description: ` + curEvent.description + `</h4>
-			 					<h4> Date: ` + curEvent.date + `</h4>`
-			 					if (!curEvent.join_status) {
-			 						markup += `<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
-				 						<button type="button" class="btn btn-primary joinButton" > Join </button>
-			 						</div>`
-			 					} else {
-			 						markup += `<p class = "mb-0"> You have already joined this event</p>	
-			 						<div class="text-right" style="margin-bottom: 1%; margin-right: 1%"> 
-			 									<button type="button" class="btn btn-primary editButton" > Edit </button>
-			 									</div>`
-			 					}
-			 			
-			// $('#events').append(markup);
-				   markup+=`<div class = "fillout" style="text-align: center;background-color:white;">
+			var markup = `<div class="col-md-4 col-sm-6 portfolio-item ` + curEvent.type + ` z` + i.toString() +  `">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            
+          </a>
+          <div class="portfolio-caption event eventDescr">
+            <h4>`+ parse_string(curEvent.title) + `</h4>
+             <i> Date:` + curEvent.date + `</i>
+             <p class="text-muted">Descrption:` +  curEvent.description + `</p><br>`;
+
+            if (!curEvent.join_status) {
+            		markup += `<button type="button" class="btn btn-primary joinButton"  > Join </button>`
+            } else {
+            	markup += `<p class = "mb-0"> You have already joined this event</p>	
+			 						<button type="button" class="btn btn-primary editButton"  > Edit </button>`
+            }
+            markup += '</div>'
+           
+            	
+
+  
+				markup+=`<div class = "fillout" style="text-align: center">
 								<h2 style = "margin-top:2%"> How would you like to help the organizer? </h2>
 								<div class = "row" style="margin-top: 1%">`
 								// <h3 style="text-align: left;margin-top: 3%"> Title: ` + curEvent.title +` </h3>
 									
 					for (j = 0; j < (curEvent.help).length; j++) {
 						var needed = `<div class = "helpersNumbers" style="float:right;"><p style = "display:inline;">(` + (curEvent.help[j][2]).toString() + `/` + (curEvent.help[j][1]).toString() + `</p><i class=\"fas fa-user\"></i>)</div>`;
-						markup += `<div class = "checkbox" >
+						markup += `<div class="custom-control custom-checkbox custom-control-inline checkbox" >
 										<input type = "checkbox" class = "helpCheckbox" id ="` + curEvent.title + curEvent.help[j][0] + i.toString() ;		
 									if (curEvent.help[j][2] == curEvent.help[j][1] && curEvent.help[j][3] == 0) {
 										markup += `" name = "ossm" disabled >`
@@ -111,22 +127,24 @@ $( document ).ready(function()	{
 							</div>
 						</div>`
 			if (curEvent.userCreate == 1) {
-				markup = `<div class="col-md-6 `  + curEvent.type + ` z` + i.toString() + `">
-			 				<div style="text-align: left;margin-top: 2%" class = "eventDescr">
-		 						<h4> Title: ` + parse_string(curEvent.title) + `</h4>
-					 			<h4> Description: ` + curEvent.description + `</h4>
-			 					<h4> Date: ` + curEvent.date + `</h4>`
-			 					
-			 						markup += `<p class = "mb-0"> You are the creator of this event.</p>`
-			 						// <div class="text-right" style="margin-bottom: 1%; margin-right: 1%"> 
-			 						// 			<button type="button" class="btn btn-primary editButton" > Edit </button>
-			 						// 			</div>`
-			 					
-			 			markup += `</div>`
+				 markup = `<div class="col-md-4 col-sm-6 portfolio-item ` + curEvent.type + ` z` + i.toString() +  `">
+						          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+						            <div class="portfolio-hover">
+						              <div class="portfolio-hover-content">
+						                <i class="fas fa-plus fa-3x"></i>
+						              </div>
+						            </div>
+						            
+						          </a>
+						          <div class="portfolio-caption">
+						            <h4>`+ parse_string(curEvent.title) + `</h4>
+						             <i> Date:` + curEvent.date + `</i>
+						             <p class="text-muted">Descrption:` +  curEvent.description + `</p><br>
+						             <p class = "mb-0"> You are the creator of this event.</p>	
+						          </div>`;
 			 	}
-			 	markup += `</div>`
 			$('#events').append(markup)
-			}
+		}
 			
 
 		
@@ -149,15 +167,14 @@ $( document ).ready(function()	{
 	}
 
 
-	$(".row").on('click','.joinButton',function(){
-			var x = ($(this).closest('div')).parent().children('.fillout');
-				// .parent().parent()..children('.fillout'))
+	$("#events").on('click','.joinButton',function(){
+			var x = ($(this).closest('div').parent().children('.fillout'))
 			x.animate( { "opacity": "show", top:"100"} , 500 );
 			
      });
 
-	$(".row").on('click','.cancelButton',function(){
-			var ind = ($(this).closest('div')).parent().hide()
+	$("#events").on('click','.cancelButton',function(){
+			var ind = ($(this).closest('div')).parent().parent().hide()
 			var x = events;
 			populateEvents();
 			// var x = ($(this).closest('div').parent().parent().children('.eventDescr'))
@@ -172,7 +189,7 @@ $( document ).ready(function()	{
 	}
 
 
-	$(".row").on('click','.submitButton',function(){
+	$("#events").on('click','.submitButton',function(){
 		// var kek = ($(this).closest('div')).parent().parent().children('.eventDescr').children('.joinButton')
 		// kek.attr("disabled", true); 
 		var ind = ($(this).closest('div')).parent().hide();
@@ -181,7 +198,7 @@ $( document ).ready(function()	{
 			// console.log(ind.attr('class'))
 		var x = ($(this).closest('div').parent().parent().children('.eventDescr'))
 			x.animate( { "opacity": "show", top:"100"} , 500 );
-		var y = ($(this).closest('div').parent().parent().parent().prop('class'));
+		var y = ($(this).closest('div').parent().parent().prop('class'));
 		console.log(y);
 		var ind = y[y.length - 1]
 		var curEvent = events[ind];
@@ -202,17 +219,22 @@ $( document ).ready(function()	{
 			// }
 		}
 		writeToDatabase({'title': curEvent.title, 'description': curEvent.description, 
-			'date': curEvent.date, "type": curEvent.type, "help": curEvent.help, 'index': curEvent.index, 'userCreate': 0, 'type': event.type, 'userCreate': 0})
+			'date': curEvent.date, 'type': curEvent.type, "help": curEvent.help, 'index': curEvent.index, 'userCreate': 0, 'type': event.type, 'userCreate': 0})
 
 		// curEvent.join_status = true;
 		
 		populateEvents();
      });
 	
-	$(".row").on('click','.editButton',function(){
-			var x = ($(this).closest('div')).parent().children('.fillout');
-				// .parent().parent()..children('.fillout'))
+	$("#events").on('click','.editButton',function(){
+		// var x = ($(this).closest('div').parent().parent().children('.fillout'))
+		// x.animate( { "opacity": "show", top:"100"} , 500 );
+		// var y = ($(this).closest('div').parent().parent().prop('class'));
+		// var ind = y[y.length - 1]
+		// var curEvent = events[ind];
+		var x = ($(this).closest('div').parent().children('.fillout'))
 			x.animate( { "opacity": "show", top:"100"} , 500 );
+		
      });
 
 		
@@ -262,7 +284,7 @@ $( document ).ready(function()	{
 		if ($(this).attr('id') == 'allCheckbox' && this.checked) {
 			for (i = 1; i < checkboxIDs.length; i++) {
 				$('#' + checkboxIDs[i]).prop('checked', false);
-				$('')
+				// $('')
 			}
 			updateEventTable();
 		} else {
@@ -289,14 +311,12 @@ $( document ).ready(function()	{
 		var checkPopulate1 = await checkPopulate;
 		// checkPopulate1 = true;
 		if (checkPopulate1) {
-			
-
 			populateEvents();
 		}
 	// }
 	} 
 	f();
-		$(".row").on('click', '#create_event', function () {
+		$(".container").on('click', '#create_event', function () {
   window.location.replace("create-event.html");
   //   async function demo() {
   // console.log('Taking a break...');
