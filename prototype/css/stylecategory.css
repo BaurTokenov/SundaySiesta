@@ -1,0 +1,134 @@
+#top-box {
+  padding: 2em;
+  margin-top: 4.8%;
+  margin-bottom: 3%;
+  background-color: #4286f4;
+  color: white;
+  /* #4286f4; */
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  width: 75%;
+  margin-left: 12.5%;
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+#noResults {
+  width: 75%;
+  margin-left: 12.5%;
+  background-color: #f6f6f6;
+  color: #D3D3D3;
+  padding: 12px;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+
+h1 {
+  vertical-align: top;
+  /* font-size: 30px; */
+  font-weight: bold;
+}
+
+#top-box button:hover {
+  background: #ccc;
+}
+
+.search-button {
+  cursor: pointer;
+  width: 4%;
+  padding: 15px 9px;
+  margin-top: 1px;
+  background: #ddd;
+  /* margin-right: 16px; */
+  font-size: 17px;
+  border: none;
+}
+
+/* .search-bar {
+  width: 75%;
+  margin-left: 10%;
+  font-size: 17px;
+  border: none;
+  padding: 14px;
+  float: none;
+  margin-bottom: 2%;
+  display: inline-block;
+} */
+
+#search-box {
+  width: 75%;
+  margin-left: 12.5%;
+
+}
+
+.align-center {
+  text-align: center;
+}
+
+.div-box {
+  margin: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: 600px;
+  /* border: 2px solid #4286f4; */
+  /* background-color: #E8E8E8; */
+}
+
+.inside-box {
+  margin: 3%;
+  margin-left: 1%;
+  height: 78%;
+  width: 94%;
+}
+
+.answers {
+  margin: 2%;
+  margin-right: 10%;
+  margin-left: 5%;
+  border: 2px solid grey;
+  padding: 7px;
+  padding-left: 20px;
+}
+
+.closebtn {
+  float: right;
+  color: black;
+  padding-right: 4px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.plus-button {
+  background-color: #4286f4;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}

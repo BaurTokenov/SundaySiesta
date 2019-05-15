@@ -1,105 +1,76 @@
-# Empty CSS file for your own CSS
-
-#myMenu{
-  color: blue;
+.eventFilter .checkbox {
+	float:left;
+}
+.checkboxLabels{
+	font-size: 25px
+}
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #E3E3E3;
+}
+table {
+    border-collapse: inherit;
+    border-spacing: 0 10px;
+}
+#tableContainer-1 {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+#tableContainer-2 {
+  vertical-align: middle;
+  display: table-cell;
+  height: 100%;
+}
+#myTable {
+  margin: 0 auto;
+}
+tr {
+    height: 300px;
+    background-color:white;
+    border-width: thin;
+    border-color: black;
+            }
+td {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:20px;
+}
+img{
+  padding: 20px
 }
 
-.checkboxLabels {
-	font-size: 40px;
+.contBtn {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #57B4FB;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 1px #999;
+  margin-left: 30px;
+}
+
+.contBtn:hover {background-color: #3C95D9}
+
+.contBtn:active {
+  background-color: #57B4FB;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
 }
 
 .eventFilter input[type="checkbox"] + label {
-  color: #dbdbdb;
+  color: black;
   font-style: normal;
-} 
+}
 .eventFilter input[type="checkbox"]:checked + label {
-  /*color: ;*/
-  /*font-style: italic;*/
-  color: #ffff;
+  color:black;
   font-weight: bolder;
-} 
-
-.fillout input[type="checkbox"] + label {
-  /*color: black;*/
-  font-style: normal;
-} 
- .fillout input[type="checkbox"]:checked + label {
-  /*color: ;*/
-  /*font-style: italic;*/
-  /*color: #dbdbdb;*/
-  font-weight: 600;
-} 
-.fillout input[type="checkbox"]:disabled + label {
-  color: #727272;
 }
-
-#events .col-md-6 {
-  width: 50%;
-  border: 1px solid black;
-}
-
-
-.checkbox:checked {
-  font-style: oblique;
-  font-style: italic;
-
-  font-family: sans-serif;
-}
-
-
-.checkbox {
-    margin-left: 40px;
-}
-.eventFilter .checkbox {
-	float:left;
-
-}
-
-
-/*.checkboxLabels input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-*/
-
-/*#events {
-	display: none;
-}*/
-
-.fillout {
-	display: none;
-}
-#create_event {
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  border: None;
-  background-color: #4286f4;
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  width: 300px;
-  height: 100px;
-  margin-top: 50px;
-  font-size: 30px; 
-}
-
-.row {
-	margin-top: 50px;
-
-}
-
-#create_event:hover {
-  background-color: #154a96; 
-  
-}
-td {
-	background-color: red;
-	border: 1px solid darkgrey;
-	border-collapse: collapse;
-	width: 900px;
-	text-align: center;	
-}
-
