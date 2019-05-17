@@ -130,7 +130,7 @@
               
             </a>
             <div class="portfolio-caption">
-              <h4>` + curEvent.title + `</h4>
+              <h4>` + parse_string(curEvent.title) + `</h4>
               <p class = "text-muted"> ` + curEvent.date  + `</p><br>
               <div style = "margin-bottom: 5px">  Description: ` + curEvent.description + `
               </div>`;
