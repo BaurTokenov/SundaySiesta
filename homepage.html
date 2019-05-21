@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title> Homepage </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/agency.min.css" rel="stylesheet">
+
+<!-- OUR links -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/homepage.css" rel="stylesheet">
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Sunday Siesta</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Upcoming Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="./myevents_new.html">My Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="./history_new.html">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="./qanda_new.html">Q&A</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">Welcome</div>
+        <div class="intro-heading text-uppercase";>Create your own event</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="./create_new.html" style="height:50px;width:230px; text-align: center; font-size: 23px;"> Create Event</a>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Portfolio Grid -->
+  <section class="bg-light page-section" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase" style= "text-align:center; font-size:40px;font-weight: bold;margin-top:-60px">Upcoming Events</h2>
+
+          <h3 class="section-subheading text-muted">Explore other cultures by helping to organize the events</h3>
+        </div>
+      </div>
+
+      <div class="eventFilter"  style="width:100%; margin:0 auto; background-color: white">
+            <div class = "col-md-12" style="width: 100%">
+              <div class = "row" style = "margin: 20px;">
+                <div class="col-md-12" style = "width: 100%;height: 50%" >
+                  <div class="custom-control custom-checkbox custom-control-inline">
+                <input type="checkbox" class="custom-control-input" id ="allCheckbox" name = "ossm" checked="checked">
+                <label class="custom-control-label" for="allCheckbox">All</label>
+                </div>
+
+                <!-- Default inline 2-->
+                <div class="custom-control custom-checkbox custom-control-inline checkbox">
+                <input type="checkbox" class="custom-control-input"  id="cookingCheckbox" name = "ossm">
+                <label class="custom-control-label" for="cookingCheckbox">Cooking</label>
+                </div>
+
+                <!-- Default inline 3-->
+                <div class="custom-control custom-checkbox custom-control-inline checkbox">
+                <input type="checkbox" class="custom-control-input" id ="dancingCheckbox" name = "ossm">
+                <label class="custom-control-label" for="dancingCheckbox">Dancing</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline checkbox">
+                <input type="checkbox" class="custom-control-input" id = "traditionalGamesCheckbox" name = "ossm">
+                <label class="custom-control-label" for="traditionalGamesCheckbox">Traditional Games</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline checkbox">
+                <input type="checkbox" class="custom-control-input"  id ="otherCheckbox" name = "ossm">
+                <label class="custom-control-label" for="otherCheckbox">Other</label>
+                </div>
+                    <!-- <div class = "checkbox" >
+                      <input type = "checkbox" id ="allCheckbox" name = "ossm" checked="checked" style="margin-left:50px">
+                        <label class = "checkboxLabels" for="allCheckbox" >
+                          All
+                        </label>
+                    </div>
+                    <div class = "checkbox" >
+                      <input type = "checkbox" id="cookingCheckbox" name = "ossm" style="margin-left:50px">
+                        <label class = "checkboxLabels" for="cookingCheckbox" style="">
+                          Cooking
+                        </label>
+                    </div>
+                    <div class = "checkbox">
+                      <input type = "checkbox" id ="dancingCheckbox" name = "ossm" style="margin-left:50px">
+                        <label class = "checkboxLabels" for="dancingCheckbox" style="">
+                          Dancing
+                        </label>
+                    </div>
+                    <div class = "checkbox">
+                      <input type = "checkbox" id = "traditionalGamesCheckbox" name = "ossm" style="margin-left:50px">
+                        <label class = "checkboxLabels" for = "traditionalGamesCheckbox" name = "ossm">
+                          Traditional Games
+                        </label>
+                    </div>
+                    <div class = "checkbox">
+                      <input type = "checkbox" id ="otherCheckbox" name = "ossm" style="margin-left:50px">
+                        <label class = "checkboxLabels" for="otherCheckbox" style="">
+                          Other
+                        </label>
+                    </div> -->
+                </div>
+              </div>
+            </div>
+      </div>
+
+      <div class="row" id = "events">
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/agency.min.js"></script>
+<!-- OUR links -->
+
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script src="js/agency.js"></script>
+    <script src ="js/tables.js"></script>
+    <script src ="js/homepage.js"></script>
+
+    <!-- <script src="jquery/js/jquery-1.9.0.min.js"></script> -->
+    <!-- <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script> -->
+
+
+</body>
+
+</html>
