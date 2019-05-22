@@ -74,6 +74,10 @@ img{
 
 .contBtn:hover {background-color: #015CBE}
 
+.checkbox {
+    margin-left: 40px;
+}
+
 .contBtn:active {
   background-color: #57B4FB;
   box-shadow: 0 1px #666;
