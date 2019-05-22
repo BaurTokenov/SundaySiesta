@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title> Login </title>
-<link rel = "stylesheet" type="text/css" href="stylelogin.css">
+<link rel = "stylesheet" type="text/css" href="css/stylelogin.css">
 </head>
 <body>
   <div class = "loginbox">
@@ -10,10 +11,17 @@
       <form>
         <p> Username </p>
         <input type ="text" name ="" placeholder="Enter your name" id = "focus">
-        <input type = "submit" name ="" value="Login">
+        <input type = "submit" name ="" id="button" style="margin-left: 5%" value="Login">
       </form>
   </div>
 
-<script src="./login_page.js"></script>
+<script src="/login_page.js"></script>
+<script>
+  var input = getElementById('focus').val();
+  document.getElementById('button').on('click', function(){
+     alert("Welcome, " + input + "! You have successfully logged in.");
+
+  })
+</script>
 </body>
 </html>
