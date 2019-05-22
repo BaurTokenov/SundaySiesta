@@ -138,29 +138,29 @@
 			 			markup += `</div>`
 
 			// $('#events').append(markup);
-				   markup +=`<div class = "fillout" style="text-align: center; background-color: white;">
-					 <h2 style = "margin-top:0%; font-size: 22px;"> How would you like to help the organizer? </h2>
-					 <div class = "row" style="font-size: 22px;margin-top: 1%; ">`
+			markup+=`<div class = "fillout" style="text-align: center; background-color: white;">
+							<h2 style = "margin-top:0%; font-size: 22px;"> How would you like to help the organizer? </h2>
+							<div class = "row" style="font-size: 22px;margin-top: 1%; ">`
 								// <h3 style="text-align: left;margin-top: 3%"> Title: ` + curEvent.title +` </h3>
 
-					for (j = 0; j < (curEvent.help).length; j++) {
-						var needed = `<div class = "helpersNumbers" style="float:right;"><p style = "display:inline;">(` + (curEvent.help[j][2]).toString() + `/` + (curEvent.help[j][1]).toString() + `</p><i class=\"fas fa-user\"></i>)</div>`;
-						markup += `<div class = "checkbox" >
-										<input type = "checkbox" class = "helpCheckbox" id ="` + curEvent.title + curEvent.help[j][0] + i.toString() ;
-									if (curEvent.help[j][2] == curEvent.help[j][1] && curEvent.help[j][3] == 0) {
-										markup += `" name = "ossm" disabled >`
-									} else {
-										if (curEvent.help[j][3] == 1)
-											markup += `" name = "ossm" checked>`
-										else
-											markup += `" name = "ossm">`
-									}
+								for (j = 0; j < (curEvent.help).length; j++) {
+									var needed = `<div class = "helpersNumbers" style="float:right; font-size: 22px; "><p style = "display:inline;">(` + (curEvent.help[j][2]).toString() + `/` + (curEvent.help[j][1]).toString() + `</p><i class=\"fas fa-user\"></i>)</div>`;
+									markup += `<div class="custom-control custom-checkbox custom-control-inline checkbox" style = "margin-top: ;">
+												<input type = "checkbox" style = "font-size: 22px; margin-top: 300px;" class = "custom-control-input helpCheckbox" id ="` + curEvent.title + curEvent.help[j][0] + i.toString() ;
+												if (curEvent.help[j][2] == curEvent.help[j][1] && curEvent.help[j][3] == 0) {
+													markup += `" name = "ossm" disabled >`
+												} else {
+													if (curEvent.help[j][3] == 1)
+														markup += `" name = "ossm" checked>`
+													else
+														markup += `" name = "ossm">`
+												}
 
-								markup += 	`<label class = "checkboxLabels" for="` + curEvent.title + curEvent.help[j][0] + i.toString() + `">
-												` + parse_string((curEvent.help)[j][0]) + needed + `
-											</label>
-									</div>`
-					}
+											markup += 	`<label style = "font-size: 22px; white-space: nowrap;" class = "custom-control-label checkboxLabels" for="` + curEvent.title + curEvent.help[j][0] + i.toString() + `">
+															` + parse_string((curEvent.help)[j][0]) + needed + `
+														</label>
+												</div>`
+								}
 					markup += `</div>
 								<div class="text-right" style="margin-bottom: 1%; margin-right: 1%">
 									<button type="button" class="btn btn-primary submitButton" > Submit </button>
@@ -202,6 +202,7 @@
      });
 
 	$(".otherEvents").on('click','.editButton',function(){
+		$(this).hide();
 		var x = ($(this).closest('div').parent().parent().children('.fillout'))
 		x.animate( { "opacity": "show", top:"100"} , 500 );
 		var y = ($(this).closest('div').parent().parent().prop('class'));

@@ -102,9 +102,9 @@ $( document ).ready(function()	{
 								// <h3 style="text-align: left;margin-top: 3%"> Title: ` + curEvent.title +` </h3>
 
 					for (j = 0; j < (curEvent.help).length; j++) {
-						var needed = `<div class = "helpersNumbers" style="float:right; font-size: 22px; ">(` + (curEvent.help[j][2]).toString() + `/` + (curEvent.help[j][1]).toString() + `<i class=\"fas fa-user\"></i>)</div>`;
+						var needed = `<div class = "helpersNumbers" style="float:right; font-size: 22px; "><p style = "display:inline;">(` + (curEvent.help[j][2]).toString() + `/` + (curEvent.help[j][1]).toString() + `</p><i class=\"fas fa-user\"></i>)</div>`;
 						markup += `<div class="custom-control custom-checkbox custom-control-inline checkbox" style = "margin-top: ;">
-										<li><input type = "checkbox" style = "font-size: 22px;" class = "helpCheckbox" id ="` + curEvent.title + curEvent.help[j][0] + i.toString() ;
+									<input type = "checkbox" style = "font-size: 22px; margin-top: 300px;" class = "custom-control-input helpCheckbox" id ="` + curEvent.title + curEvent.help[j][0] + i.toString() ;
 									if (curEvent.help[j][2] == curEvent.help[j][1] && curEvent.help[j][3] == 0) {
 										markup += `" name = "ossm" disabled >`
 									} else {
@@ -114,13 +114,13 @@ $( document ).ready(function()	{
 											markup += `" name = "ossm">`
 									}
 
-								markup += 	`<label style = "font-size: 22px;" class = "checkboxLabels" for="` + curEvent.title + curEvent.help[j][0] + i.toString() + `">
+								markup += 	`<label style = "font-size: 22px; white-space: nowrap;" class = "custom-control-label checkboxLabels" for="` + curEvent.title + curEvent.help[j][0] + i.toString() + `">
 												` + parse_string((curEvent.help)[j][0]) + needed + `
-											</label> </li>
+											</label>
 									</div>`
 					}
 					markup += `</div>
-								<div class="text-right" style="margin-bottom: 1%; margin-right: 1%; background-color: white;">
+								<div class="text-right" style="margin-bottom: 3%; margin-right: 3%; background-color: white;">
 									<button type="button" class="btn btn-primary submitButton" > Submit </button>
 									<button type="button" class="btn btn-primary cancelButton" style = "margin-right: 2%;"> Cancel </button>
 								</div>
@@ -140,7 +140,7 @@ $( document ).ready(function()	{
 						            <h4>`+ parse_string(curEvent.title) + `</h4>
 						             <i class="text-muted"> Date:` + curEvent.date + `</i>
 						             <p>Descrption:` +  curEvent.description + `</p><br>
-						             <p class = "mb-0" style = "color: green;"> You are the creator of this event.</p>
+						             <p class = "mb-0" style = "color: #4286f4;"> You are the creator of this event.</p>
 						          </div>`;
 			 	}
 			$('#events').append(markup)
