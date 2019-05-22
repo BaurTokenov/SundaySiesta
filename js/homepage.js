@@ -138,9 +138,9 @@ $( document ).ready(function()	{
 						          </a>
 						          <div class="portfolio-caption">
 						            <h4>`+ parse_string(curEvent.title) + `</h4>
-						             <i> Date:` + curEvent.date + `</i>
-						             <p class="text-muted">Descrption:` +  curEvent.description + `</p><br>
-						             <p class = "mb-0" style = "color: red;"> You are the creator of this event.</p>
+						             <i class="text-muted"> Date:` + curEvent.date + `</i>
+						             <p>Descrption:` +  curEvent.description + `</p><br>
+						             <p class = "mb-0" style = "color: green;"> You are the creator of this event.</p>
 						          </div>`;
 			 	}
 			$('#events').append(markup)

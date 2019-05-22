@@ -33,16 +33,10 @@
 		$(".otherEvents").empty();
 		$(".myEvents").empty();
 		if (myCreatedEvents.length == 0) {
-			var markup = `<div class = "col-md-12">
-						<h2> You have no created events </h2>
-
-					  </div>
-					  <div class="col-md-12">
-							<button type = "button"; id = "create_event">
-							Create event
-							</button>
-			</div>
-			`
+			var markup = `<div class = "col-md-12" style = "background-color: white;width:100%; margin-left: 2%">
+							<h2 style="color: grey; font-size: 18px; margin: 1%; padding: 1%;" > You have not created any events yet. You can <a href = "create_new.html">create event</a>. </h2>
+  		  	 	 	    </div>
+					  </div>`
 			$(".myEvents").append(markup)
 		}
 		for (var i = 0; i < myCreatedEvents.length; ++i) {
@@ -66,7 +60,7 @@
     						<div class="card-header col-md-12" id="headingOne` + curEvent.index +`" style="background-color: white; border:none;">
 					      		<h2 class="mb-0">
 					        		<button class="btn btn-link" type="button" style = "white-space: nowrap; text-align: center;" data-toggle="collapse" data-target="#collapse` + curEvent.index + `" aria-expanded="true" aria-controls="collapseOne">
-					          			Participants list
+					          			Helpers list
 					        		</button>
 					      		</h2>
 							</div>
@@ -75,7 +69,7 @@
       					<div class="card-body">`
       					for (var j = 0; j < curEvent.help.length; ++j) {
       						markup += `<div style="margin-bottom: : 3%">
-      							<h5 > <strong>` + curEvent.help[j][0] + `</strong><p style="display: inline;">` + ' ' + curEvent.help[j][2].toString() + '/' + curEvent.help[j][1].toString() + `</p></h5>
+      							<h5 > <strong>` + parse_string(curEvent.help[j][0]) + `</strong><p style="display: inline;"><br>` + ' ' + curEvent.help[j][2].toString() + '/' + curEvent.help[j][1].toString() + ` joined: </p></h5>
         						<ul class="list-group" style = "font-size: 14px;">`
         						if (curEvent.help[j][2] == 0) {
         							markup += 	`<li class="list-group-item" style="color: orange; font-size: 22px;" ><i>` + 'Noone has entered yet' +  `</i></li>`
@@ -98,7 +92,7 @@
   			$(".myEvents").append(markup);
 		}
 		if (myJoinedEvents.length == 0) {
-			var markup = `<div class = "row" style = "background-color: white;width:100%; margin-left: 2%">
+			var markup = `<div class = "col-md-12" style = "background-color: white;width:100%; margin-left: 2%">
 							<h2 style="color: grey; font-size: 18px; margin: 1%; padding: 1%;" > Currently you have no joined events. You can join events from the <a href = "homepage.html">  home page </a>. </h2>
   		  	 	 	    </div>
 
@@ -144,9 +138,9 @@
 			 			markup += `</div>`
 
 			// $('#events').append(markup);
-				   markup +=`<div class = "fillout" style="text-align: center">
-								<h2 style = "margin-top:2%"> How would you like to help the organizer? </h2>
-								<div class = "row" style="margin-top: 1%">`
+				   markup +=`<div class = "fillout" style="text-align: center; background-color: white;">
+					 <h2 style = "margin-top:0%; font-size: 22px;"> How would you like to help the organizer? </h2>
+					 <div class = "row" style="font-size: 22px;margin-top: 1%; ">`
 								// <h3 style="text-align: left;margin-top: 3%"> Title: ` + curEvent.title +` </h3>
 
 					for (j = 0; j < (curEvent.help).length; j++) {
