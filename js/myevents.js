@@ -61,9 +61,10 @@
             <p class = "text-muted">` +curEvent.date +`</p><br>
             <div style = "margin-bottom: 5px">  Description:  ` + curEvent.description + `  
             </div>
-            <div class="accordion" id="accordion` + curEvent.index + `">
+            
+            <div class="accordion"  id="accordion` + curEvent.index + `">
 						 
-    						<div class="card-header col-md-7" id="headingOne` + curEvent.index +`" style="background-color: white">
+    						<div class="card-header col-md-12" id="headingOne` + curEvent.index +`" style="background-color: white">
 					      		<h2 class="mb-0">
 					        		<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse` + curEvent.index + `" aria-expanded="true" aria-controls="collapseOne">
 					          			Participants list
@@ -71,11 +72,11 @@
 					      		</h2>
 							</div>
 						
-					<div id="collapse` + curEvent.index + `" class="collapse hide col-md-7" aria-labelledby="headingOne` + curEvent.index +`" data-parent="#accordion` + curEvent.index+`" style="margin-top: 1%">
+					<div id="collapse` + curEvent.index + `" class="collapse hide col-md-12" aria-labelledby="headingOne` + curEvent.index +`" data-parent="#accordion` + curEvent.index+`" style="margin-top: 1%">
       					<div class="card-body">`
       					for (var j = 0; j < curEvent.help.length; ++j) {
       						markup += `<div style="margin-bottom: : 3%">
-      							<h2> ` + curEvent.help[j][0] + `<p style="display: inline;">` + ' ' + curEvent.help[j][2].toString() + '/' + curEvent.help[j][1].toString() + `</p></h2>
+      							<h2> ` + parse_string(curEvent.help[j][0]) + `<div>` + ' ' + curEvent.help[j][2].toString() + '/' + curEvent.help[j][1].toString() + `<i class=\"fas fa-user\"></i></div></h2>
         						<ul class="list-group">`
         						if (curEvent.help[j][2] == 0) {
         							markup += 	`<li class="list-group-item">` + 'Noone has entered yet' +  `</li>`

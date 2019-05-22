@@ -65,7 +65,7 @@ $(".lastBtn").on('click', '#submitBtn', function () {
         continue;
       var curHelpNumber = $("#helpTable tr:eq(" + i.toString() + ") .pplNumber").val(); 
       var curHelpDescription = $("#helpTable tr:eq(" + i.toString() + ") .descriptionOfHelp").val(); 
-      curHelp = [parseForDB(curHelpTitle), curHelpNumber, 2, 0, curHelpDescription];
+      curHelp = [parseForDB(curHelpTitle), curHelpNumber, Math.max(curHelpNumber, 2), 0, curHelpDescription];
       totalHelp.push(curHelp);
     }
     var type = $('#categorySelection').val();

@@ -103,8 +103,8 @@ $( document ).ready(function()	{
 									
 					for (j = 0; j < (curEvent.help).length; j++) {
 						var needed = `<div class = "helpersNumbers" style="float:right;"><p style = "display:inline;">(` + (curEvent.help[j][2]).toString() + `/` + (curEvent.help[j][1]).toString() + `</p><i class=\"fas fa-user\"></i>)</div>`;
-						markup += `<div class="custom-control custom-checkbox custom-control-inline checkbox" >
-										<input type = "checkbox" class = "helpCheckbox" id ="` + curEvent.title + curEvent.help[j][0] + i.toString() ;		
+						markup += `<div class="custom-control custom-checkbox custom-control-inline checkbox">
+										<input type = "checkbox" class = "custom-control-input helpCheckbox" id ="` + curEvent.title + curEvent.help[j][0] + i.toString();		
 									if (curEvent.help[j][2] == curEvent.help[j][1] && curEvent.help[j][3] == 0) {
 										markup += `" name = "ossm" disabled >`
 									} else {
@@ -113,8 +113,9 @@ $( document ).ready(function()	{
 										else
 											markup += `" name = "ossm">`
 									}
+									                
 
-								markup += 	`<label class = "checkboxLabels" for="` + curEvent.title + curEvent.help[j][0] + i.toString() + `">  
+								markup += 	`<label class = "custom-control-label checkboxLabels" for="` + curEvent.title + curEvent.help[j][0] + i.toString() + `">  
 												` + parse_string((curEvent.help)[j][0]) + needed + `
 											</label>
 									</div>`
