@@ -42,6 +42,7 @@
 		}
 		for (var i = 0; i < myCreatedEvents.length; ++i) {
 			curEvent = myCreatedEvents[i];
+			console.log(curEvent);
 		var markup = `<div class="col-md-4 col-sm-6 portfolio-item">
             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
               <div class="portfolio-hover">
@@ -55,8 +56,11 @@
             <h4 style = "font-weight:600;">`  + parse_string(curEvent.title) + `</h4>
             <p class = "text-muted">` + curEvent.date +`</p><br>
             <div style = "margin-bottom: 5px">  Description:  ` + curEvent.description + `
-            </div>
-            <div class="accordion" id="accordion` + curEvent.index + `">
+            </div>`;
+
+            if (curEvent.help.length != 0) {
+            	markup += `
+            	<div class="accordion" id="accordion` + curEvent.index + `">
 
     						<div class="card-header col-md-12" id="headingOne` + curEvent.index +`" style="background-color: white; border:none;">
 					      		<h2 class="mb-0">
@@ -86,9 +90,13 @@
 
   						markup += `</div>
   					</div>
-  					</div>
-  				</div>
+  					</div>` 
+  				}
+
+  			markup +=	`</div>
   			</div>`
+
+
 
   			$(".myEvents").append(markup);
 		}
