@@ -11,6 +11,7 @@
 	// writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah",
 	// 		'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 3, 3, 1], ['reservation_of_speaker', 1, 0, 0],
 	// 		 ['reservation_of_room', 1, 0, 0]], 'index': 3, 'userCreate': 0, 'type': `otherEvent`})
+	// debil
 	function parse_string(s) {
 		ans = ""
 		for (var i = 0; i < s.length; i++) {
