@@ -29,7 +29,7 @@
 
 
 	function populateEvents(check) {
-		var participantNames = ['Pablo Escobar', 'Antonio Vivaldi', 'Beethoven', 'Joseph Stalin', 'Tovarisch Lenin']
+		var participantNames = ['Pablo Escobar', 'Antonio Vivaldi', 'Beethoven', 'Joseph Stalin', 'Tovarisch Lenin', 'Bauka', 'Yerba', 'John Snow', 'Sam Smith']
 		$(".otherEvents").empty();
 		$(".myEvents").empty();
 		if (myCreatedEvents.length == 0) {
@@ -74,6 +74,7 @@
         						if (curEvent.help[j][2] == 0) {
         							markup += 	`<li class="list-group-item" style="color: orange; font-size: 22px;" ><i>` + 'Noone has entered yet' +  `</i></li>`
         						}
+								 shuffle(participantNames);
 								 for (var k = 0; k < curEvent.help[j][2]; ++k) {
 								  		markup += `<li class="list-group-item" style= "white-space: nowrap; text-align: center; width: ; border: ;">` + participantNames[k % 4] +  `</li>`
 									}
