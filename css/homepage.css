@@ -5,31 +5,31 @@
 }
 
 .checkboxLabels {
-	font-size: 40px;
+	font-size: 20px;
 }
 
 /*.eventFilter input[type="checkbox"] + label {
   color: #dbdbdb;
   font-style: normal;
-}
+} 
 .eventFilter input[type="checkbox"]:checked + label {
   /*color: ;*/
   /*font-style: italic;*/
 /*  color: #ffff;
   font-weight: bolder;
-}
+} 
 */*/
 
 .fillout input[type="checkbox"] + label {
   /*color: black;*/
   font-style: normal;
-}
+} 
  .fillout input[type="checkbox"]:checked + label {
   /*color: ;*/
   /*font-style: italic;*/
   /*color: #dbdbdb;*/
   font-weight: 600;
-}
+} 
 
 .fillout input[type="checkbox"]:disabled + label {
   color: #727272;
@@ -86,7 +86,7 @@
   width: 300px;
   height: 100px;
   margin-top: 50px;
-  font-size: 30px;
+  font-size: 30px; 
 }
 
 .row {
@@ -95,13 +95,14 @@
 }
 
 #create_event:hover {
-  background-color: #154a96;
-
+  background-color: #154a96; 
+  
 }
 td {
 	background-color: red;
 	border: 1px solid darkgrey;
 	border-collapse: collapse;
 	width: 900px;
-	text-align: center;
+	text-align: center;	
 }
+

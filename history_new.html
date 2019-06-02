@@ -74,42 +74,54 @@
 
   <!-- Header -->
 
-<div style = "background-color:#F2F2F3">
+<div style = "background-color:">
+
+  <div style = "height: 30px;position: relative;margin-top:150px;">
+  <h1 class="section-heading text-uppercase" style= "text-align:center; font-size:40px;">Past Events</h1>
+  <h4 class="h4" style= "text-align:center; margin-top:10px">“Study the past if you would define the future.” ― Confucius
+</h4>
+
+  </div>
+
   <div class="eventFilter"  style="width:1000px; margin:95px auto; background-color:">
         <div class = "col-md-12">
           <div class = "row">
             <div class="col-md-12" style = "background-color: ;height: 50%;" >
-                    <h1 style= "text-align:center; font-size:40px;font-weight: bold;padding: 50px;font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';">Choose category:</h1>
-                <div class = "checkbox" >
-                  <input type = "checkbox" id ="allCheckbox" name = "ossm" checked="checked" style="margin-left:90px">
-                    <label class = "checkboxLabels" for="allCheckbox" >
-                      All
-                    </label>
-                </div>
-                <div class = "checkbox" >
-                  <input type = "checkbox" id="cookingCheckbox" name = "ossm" style="margin-left:50px">
-                    <label class = "checkboxLabels" for="cookingCheckbox" style="">
-                      Cooking
-                    </label>
-                </div>
-                <div class = "checkbox">
-                  <input type = "checkbox" id ="dancingCheckbox" name = "ossm" style="margin-left:50px">
-                    <label class = "checkboxLabels" for="dancingCheckbox" style="">
-                      Dancing
-                    </label>
-                </div>
-                <div class = "checkbox">
-                  <input type = "checkbox" id = "traditionalGamesCheckbox" name = "ossm" style="margin-left:50px">
-                    <label class = "checkboxLabels" for = "traditionalGamesCheckbox" name = "ossm">
-                      Traditional Games
-                    </label>
-                </div>
-                <div class = "checkbox">
-                  <input type = "checkbox" id ="otherCheckbox" name = "ossm" style="margin-left:50px">
-                    <label class = "checkboxLabels" for="otherCheckbox" style="">
-                      Other
-                    </label>
-                </div>
+              <!-- <h1 class="section-heading text-uppercase" style= "text-align:center; font-size:40px;font-weight: bold;padding: 50px;">Past Events</h1> -->
+              <div class="eventFilter"  style="width:83%; margin:0 auto; background-color: white">
+                    <div class = "col-md-12" style="width: 100%">
+                      <div class = "row" style = "margin: 20px;">
+                        <div class="col-md-12" style = "height: 50%" >
+
+                        <div class="custom-control custom-checkbox custom-control-inline checkbox">
+                        <input type="checkbox" class="custom-control-input" id ="allCheckbox" name = "ossm" checked="checked">
+                        <label class="custom-control-label" for="allCheckbox">All</label>
+                        </div>
+
+                        <!-- Default inline 2-->
+
+                        <div class="custom-control custom-checkbox custom-control-inline checkbox">
+                        <input type="checkbox" class="custom-control-input"  id="cookingCheckbox" name = "ossm">
+                        <label class="custom-control-label" for="cookingCheckbox">Cooking</label>
+                        </div>
+
+                        <!-- Default inline 3-->
+                        <div class="custom-control custom-checkbox custom-control-inline checkbox">
+                        <input type="checkbox" class="custom-control-input" id ="dancingCheckbox" name = "ossm">
+                        <label class="custom-control-label" for="dancingCheckbox">Dancing</label>
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline checkbox">
+                        <input type="checkbox" class="custom-control-input" id = "traditionalGamesCheckbox" name = "ossm">
+                        <label class="custom-control-label" for="traditionalGamesCheckbox">Traditional Games</label>
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline checkbox">
+                        <input type="checkbox" class="custom-control-input"  id ="otherCheckbox" name = "ossm">
+                        <label class="custom-control-label" for="otherCheckbox">Other</label>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
             </div>
           </div>
         </div>

@@ -101,14 +101,16 @@ function readFromDatabase() {
 		var curHelpTable = null;
 		var curHelpList = []
 		// for (curEvent.helpers)
-		var helpersNumber = Object.keys(curEvent.helpers)
-		for (var j = 0; j < helpersNumber.length; ++j) {
-			var str = 'help' + (j).toString();	
-			// var xd = str.length;
-			var curHelpNode = curEvent.helpers[str]
-			curHelpList.push([curHelpNode.name, curHelpNode.needed, curHelpNode.joined, curHelpNode.userJoin, curHelpNode.description])
-		}
+		if (curEvent.helpers != null) {
 
+			var helpersNumber = Object.keys(curEvent.helpers)
+			for (var j = 0; j < helpersNumber.length; ++j) {
+				var str = 'help' + (j).toString();	
+				// var xd = str.length;
+				var curHelpNode = curEvent.helpers[str]
+				curHelpList.push([curHelpNode.name, curHelpNode.needed, curHelpNode.joined, curHelpNode.userJoin, curHelpNode.description])
+			}
+		}
 		// var str = 'help' + (parseInt(key, 10) + 1).toString();
 		
 		// for (var i = 0; i < curEvent.helpers; ++i) {

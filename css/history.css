@@ -1,23 +1,34 @@
 .eventFilter .checkbox {
-	float:left;
+  float:left;
 }
 .checkboxLabels{
-	font-size: 25px
+  font-size: 25px
 }
 html, body {
   height: 100%;
 }
 body {
-  background-color: #E3E3E3;
+  background-color: #F8F9FA;
 }
 table {
     border-collapse: inherit;
     border-spacing: 0 10px;
 }
+
+.h4{
+  font-size: 16px;
+font-weight: 400;
+font-style: italic;
+margin-bottom: 75px;
+text-transform: none;
+color: grey;
+font-family: 'Droid Serif',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+}
 #tableContainer-1 {
   height: 100%;
   width: 100%;
   display: table;
+  margin-top:-70px;
 }
 #tableContainer-2 {
   vertical-align: middle;
@@ -44,21 +55,28 @@ img{
 
 .contBtn {
   display: inline-block;
-  padding: 8px 15px;
-  font-size: 16px;
+  margin-left: 30px;
+
+  width:80px;
+  height: 30px;
+  padding: auto 10px;
+  font-size: 18px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #4286f4;
+  background-color: #037AFB;
   border: none;
-  border-radius: 15px;
-  box-shadow: 0 1px #999;
-  margin-left: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0.4px #787777;
 }
 
-.contBtn:hover {background-color: #3C95D9}
+.contBtn:hover {background-color: #015CBE}
+
+.checkbox {
+    margin-left: 40px;
+}
 
 .contBtn:active {
   background-color: #57B4FB;

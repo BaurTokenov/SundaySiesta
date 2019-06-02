@@ -11,6 +11,7 @@
 	// writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah",
 	// 		'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 3, 3, 1], ['reservation_of_speaker', 1, 0, 0],
 	// 		 ['reservation_of_room', 1, 0, 0]], 'index': 3, 'userCreate': 0, 'type': `otherEvent`})
+	// debil
 	function parse_string(s) {
 		ans = ""
 		for (var i = 0; i < s.length; i++) {
@@ -29,7 +30,7 @@
 
 
 	function populateEvents(check) {
-		var participantNames = ['Pablo Escobar', 'Antonio Vivaldi', 'Beethoven', 'Joseph Stalin', 'Tovarisch Lenin', 'Bauka', 'Yerba', 'John Snow', 'Sam Smith']
+		var participantNames = ['Pablo Escobar', 'Antonio Vivaldi', 'Beethoven', 'Joseph Stalin', 'Tovarisch Lenin']
 		$(".otherEvents").empty();
 		$(".myEvents").empty();
 		if (myCreatedEvents.length == 0) {
@@ -41,6 +42,7 @@
 		}
 		for (var i = 0; i < myCreatedEvents.length; ++i) {
 			curEvent = myCreatedEvents[i];
+			console.log(curEvent);
 		var markup = `<div class="col-md-4 col-sm-6 portfolio-item">
             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
               <div class="portfolio-hover">
@@ -54,8 +56,11 @@
             <h4 style = "font-weight:600;">`  + parse_string(curEvent.title) + `</h4>
             <p class = "text-muted">` + curEvent.date +`</p><br>
             <div style = "margin-bottom: 5px">  Description:  ` + curEvent.description + `
-            </div>
-            <div class="accordion" id="accordion` + curEvent.index + `">
+            </div>`;
+
+            if (curEvent.help.length != 0) {
+            	markup += `
+            	<div class="accordion" id="accordion` + curEvent.index + `">
 
     						<div class="card-header col-md-12" id="headingOne` + curEvent.index +`" style="background-color: white; border:none;">
 					      		<h2 class="mb-0">
@@ -74,7 +79,6 @@
         						if (curEvent.help[j][2] == 0) {
         							markup += 	`<li class="list-group-item" style="color: orange; font-size: 22px;" ><i>` + 'Noone has entered yet' +  `</i></li>`
         						}
-								 shuffle(participantNames);
 								 for (var k = 0; k < curEvent.help[j][2]; ++k) {
 								  		markup += `<li class="list-group-item" style= "white-space: nowrap; text-align: center; width: ; border: ;">` + participantNames[k % 4] +  `</li>`
 									}
@@ -86,9 +90,13 @@
 
   						markup += `</div>
   					</div>
-  					</div>
-  				</div>
+  					</div>` 
+  				}
+
+  			markup +=	`</div>
   			</div>`
+
+
 
   			$(".myEvents").append(markup);
 		}
