@@ -40,7 +40,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="">Sunday Siesta</a>
+      <a class="navbar-brand js-scroll-trigger" href="./homepage.html">Sunday Siesta</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -57,10 +57,10 @@
             <a class="nav-link js-scroll-trigger" href="./myevents_new.html">My Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="./history_new.html">History</a>
+            <a class="nav-link js-scroll-trigger" href="./history_new.html">Past events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="./qanda_new.html">Q&A</a>
+            <a class="nav-link js-scroll-trigger" href="./qanda.html">Q&A</a>
           </li>
         </ul>
       </div>
@@ -77,8 +77,8 @@
 </div>
   <!-- Header -->
         <div style = "background-color:" id = "yadebil">
-        <div style = "height: 160px">  <button class = "back" style = "position: relative;margin-top:120px;"><i class="fas fa-chevron-left"></i></button>
-        <h1 class="section-heading text-uppercase" style= "text-align:center; font-size:40px;">Past event by John Smith</h1>
+        <div style = "height: 160px">  <button id = "backButton" class = "back" style = "position: relative;margin-top:120px;"><i class="fas fa-chevron-left"></i></button>
+        <h1 class="section-heading text-uppercase" style= "text-align:center; font-size:40px;" id = "organizerName">Past event by John Smith</h1>
         <h4 class="section-subheading text-muted" style= "text-align:center; margin-top:-40px">“Study the past if you would define the future.”
 ― Confucius</h4>
 
@@ -96,20 +96,20 @@
               </tr>
               <tr class= "eventInfo"><!-- title -->
                 <td class = "firstCol"><label for="eventTitle" class = "form">Category:</label></td>
-                <td class = "secondCol"><text type="text" style = "border-width: 0;" class="form-control" id="eventTitle">Cooking</text></td>
+                <td class = "secondCol"><text type="text" style = "border-width: 0;" class="form-control" id="eventType">Cooking</text></td>
 
               </tr>
                 <tr class= "eventInfo"><!-- calendar-->
                     <td class = "firstCol" id="pickup_date"><label class="form">Date:</label> </td>
-                    <td class = "secondCol" id = "clndr"> <text type="date" class="textbox" style = "border-width: 0;" id="pick_date" name="pickup_date" style="width:230px;height:37px;" onchange="cal()"> 20/03/18</text></td>
+                    <td class = "secondCol"> <text type="text"  class = "form-control" style = "border-width: 0;" id="pick_date" name="pickup_date"  onchange="cal()"> 20/03/18</text></td>
                 </tr>
                 <tr class= "eventInfo"><!-- duration-->
-                    <td class = "firstCol"><label class = "form">Expected duration:</label></td>
-                    <td class = "secondCol"><text type="number" style = "border-width: 0;" id="duration" name="duration" style="height:37px" min="1" max="20">3 hours<text></td>
+                    <td class = "firstCol"><label for="duration" class = "form">Expected duration:</label></td>
+                    <td class = "secondCol"><text type="text"  style="border-width: 0; text-align: left" class="form-control" id="duration" name="duration">3 hours</text> </td>
                 </tr>
                 <tr class= "eventInfo">
                   <td class = "firstCol"><label for="location" class = "form">Location:</label></td>
-                  <td class = "secondCol"><text type="text" style = "border-width: 0;" class="form-control" id="exampleInputEmail1">W2-1 KAIST, Multipurpose Hall</text></td>
+                  <td class = "secondCol"><text type="text" style = "border-width: 0;" class="form-control" id="locationInput">W2-1 KAIST, Multipurpose Hall</text></td>
                 </tr>
                 <tr>
                   <td class = "firstCol" id = "descr"><label for="description" class = "form">Description:</label></td>
@@ -131,37 +131,20 @@
               <tbody>
               <tr class = "helpRow">
                 <td class = "col1"><input type="text" id = "title" placeholder= "Reservation" style="width:230px;height:45px;pointer-events:none;";></input> <center><input  type = "text" id="pplNumber" style="height:45px; width: 230px; pointer-events:none;" max = "30" min="1" placeholder = "3 people"></input></center></td>
-                <td class = "col2"><text class="form-control" id="descriptionOfTask" > Need to reserve Multipurpose hall and media equipment. Also keep keys</text></td></td>
+                <td class = "col2"><text class="form-control" class="descriptionOfTask" > Need to reserve Multipurpose hall and media equipment. Also keep keys</text></td></td>
               </tr>
               <tr class = "helpRow">
                 <td class = "col1"><input type="text" id = "title" placeholder= "Cooking" style="width:230px;height:45px;pointer-events:none;";></input> <center><input  type = "text" id="pplNumber" style="height:45px; width: 230px;pointer-events:none;" max = "30" min="1" placeholder = "2 people"></input></center></td>
-                <td class = "col2"><text class="form-control" id="descriptionOfTask" > Need to learn how to cook sweets. Buy ingredients and cook in the kitchen.</text></td></td>
+                <td class = "col2"><text class="form-control" class="descriptionOfTask" > Need to learn how to cook sweets. Buy ingredients and cook in the kitchen.</text></td></td>
               </tr>
               <tr class = "helpRow">
                 <td class = "col1"><input type="text" id = "title" placeholder= "Music" style="width:230px;height:45px;pointer-events:none;";></input> <center><input  type = "text"   id="pplNumber" style="height:45px; width: 230px;pointer-events:none;" max = "30" min="1" placeholder = "1 person"></input></center></td>
-                <td class = "col2"><text class="form-control" id="descriptionOfTask" > Need to download national music and fix all apparature</text></td></td>
+                <td class = "col2"><text class="form-control" class ="descriptionOfTask" > Need to download national music and fix all apparature</text></td></td>
               </tr>
             </tbody>
             </table>
           <div class="row">
-            <div class="col-md-12">
-              <h5 class = "subLine" style = "color:#4286f4;   margin-top: 40px;">
-                Sent requests to:
-              </h5>
-              <div style="margin-left: 30px;">
-              <table id = "reqTable" >
-      <tr>
-        <td><text style = "font-weight: bold">Cooking:</text> Bauka2000 </td>
-      </tr>
-      <tr>
-        <td><text style = "font-weight: bold">Reservation:</text> Tosha99 </td>
-      </tr>
-      <tr>
-        <td><text style = "font-weight: bold">Music:</text> NaziyaZh </td>
-      </tr>
-              </table>
-            </div>
-            </div>
+
           </div>
           </div>
         </div>
@@ -180,7 +163,7 @@
 
   <!-- Contact form JavaScript -->
   <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
+  
 
   <!-- Custom scripts for this template -->
   <script src="js/agency.min.history.js"></script>
@@ -197,6 +180,9 @@
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
 
 <script src="js/agency.history.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+<script src="js/tables.js"></script>
+<script src="js/contact_me.js"></script>
 </body>
 
 </html>

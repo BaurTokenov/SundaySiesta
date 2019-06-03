@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
   <title>Food Q & A</title>
-
+ 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -42,7 +42,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="">Sunday Siesta</a>
+        <a class="navbar-brand js-scroll-trigger" href="./homepage.html">Sunday Siesta</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -59,10 +59,10 @@
             <a class="nav-link js-scroll-trigger" href="./myevents_new.html">My Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="./history_new.html">History</a>
+            <a class="nav-link js-scroll-trigger" href="./history_new.html">Past events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="./qanda_new.html">Q&A</a>
+            <a class="nav-link js-scroll-trigger active" href="./qanda.html">Q&A</a>
           </li>
         </ul>
         </div>
@@ -84,22 +84,18 @@
     <h1 class="align-center">Find out the answer for your question...</h1>
     <div class="input-group md-form form-sm form-2 pl-0" id="search-box">
       <input class="form-control my-0 py-1"  type="text" onkeyup="myFunction()" placeholder="Search" id="search-bar" >
-
-      <div class="input-group-append">
-        <button class="input-group-text lime lighten-2" ><i class="fas fa-search text-grey" aria-hidden="true"></i></button>
-      </div>
     </div>
     <ul id="myUL" style = "display:none;" >
-      <li><a href="food.html" id="li1">Do we need to collect the plastic dish left after the event separately?</a></li>
-      <li><a href="budget.html" id ="li2">How much did you spend on average for the event for around 20 people?</a></li>
+      <li><a href="#" id="8">Do we need to collect the plastic dish left after the event separately?</a></li>
+      <li><a href="budget.html#7" id ="7">How much did you spend on average for the event for around 20 people?</a></li>
 
-      <li><a href="budget.html" id ="li3">Is it possible to get funding for the event from the university?</a></li>
-      <li><a href="food.html" id ="li4">What is the closest grocery shop?</a></li>
-
-      <li><a href="food.html" id ="li5">Where are the trash bins near the multipurpose hall in W2-1?</a></li>
-      <li><a href="food.html" id ="li6">Where can I order Halal meat?</a></li>
-      <li><a href="food.html" id ="li7">Where can I order fresh vegetables?</a></li>
-      <li><a href="food2.html#buttonfood1"id ="li8" action = "food.html" onclick = "questionFunction('food2')">Where is the most affordable market near the campus?</a></li>
+      <li><a href="budget.html#6" id ="6">Is it possible to get funding for the event from the university?</a></li>
+      <li><a href="#" id ="4" onclick = "openQuestion('4')">What is the closest grocery shop?</a></li>
+      <li><a href="#" id ="5" onclick = "openQuestion('5')">Where can I store food for the event on the campus?</a></li>
+      <li><a href="#" id ="9" onclick = "openQuestion('9')">Where are the trash bins near the multipurpose hall in W2-1?</a></li>
+      <li><a href="#" id ="1" onclick = "openQuestion('1')">Where can I order Halal meat?</a></li>
+      <li><a href="#" id ="3" onclick = "openQuestion('3')">Where can I order fresh vegetables?</a></li>
+      <li><a href="#"id ="2" action = "food.html" onclick = "openQuestion('2')">Where is the most affordable market near the campus?</a></li>
     </ul>
     <div id="noResults" style="display:none;">No results found</div>
     <!-- <button class="search-button" type="submit"><i class="fas fa-search"></i></button> -->
@@ -109,7 +105,7 @@
     <!-- <div class = "inside-box"> -->
   <div class="accordion" id="accordionExample">
     <div class="card">
-      <div class="card-header" id="headingOne">
+      <div class="card-header" id="heading1">
         <h2 class="mb-0">
           <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#a1" aria-expanded="true" aria-controls="a1">
           Where can I order Halal meat?
@@ -117,7 +113,7 @@
         </h2>
       </div>
 
-      <div id="a1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div id="a1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample">
         <div class="card-body">
             <p>
               <b>Answer 1:</b> Buy from Global Food Market.<br/>
@@ -127,14 +123,14 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-header" id="headingTwo">
+      <div class="card-header" id="heading2">
         <h2 class="mb-0">
-          <button class="btn btn-link collapsed" id = "buttonfood2" type="button" data-toggle="collapse" data-target="#food2" aria-expanded="false" aria-controls="food2">
+          <button class="btn btn-link collapsed" id = "buttonfood2" type="button" data-toggle="collapse" data-target="#a2" aria-expanded="false" aria-controls="a2">
               Where is the most affordable market near the campus?
           </button>
         </h2>
       </div>
-      <div id="food2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div id="a2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
         <div class="card-body">
           <p>
             <b>Answer 1:</b> You can go to Hanbit Plaza.<br/>
@@ -144,42 +140,42 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-header" id="headingThree">
+      <div class="card-header" id="heading3">
         <h2 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#a3" aria-expanded="false" aria-controls="a3">
             Where can I order fresh vegetables?
           </button>
         </h2>
       </div>
-      <div id="a3" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div id="a3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
         <div class="card-body">
           Coupang is a good choice. The delivery is fast!
         </div>
       </div>
     </div>
     <div class="card">
-      <div class="card-header" id="headingFour">
+      <div class="card-header" id="heading4">
         <h2 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#a4" aria-expanded="false" aria-controls="a4">
               What is the closest grocery shop?
           </button>
         </h2>
       </div>
-      <div id="a4" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+      <div id="a4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
         <div class="card-body">
           Hanbit Plaza is right next to the west gate and there is a big range of food you can buy there.
         </div>
       </div>
     </div>
     <div class="card">
-      <div class="card-header" id="headingFive">
+      <div class="card-header" id="heading5">
         <h2 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#a5" aria-expanded="false" aria-controls="a5">
             Where can I store food for the event on the campus?
           </button>
         </h2>
       </div>
-      <div id="a5" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+      <div id="a5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample">
         <div class="card-body">
           We usually store our food in our own refrigerators in the dorm.
         </div>
@@ -213,6 +209,7 @@
 <script src="js/jquery.min.js"></script>
 
 <script src="js/category.js"></script>
+<!-- <script src="js/qanda.js"></script> -->
 <script src="jquery/js/jquery-1.9.0.min.js"></script>
 <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
 

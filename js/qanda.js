@@ -1,3 +1,7 @@
+ 
+
+
+
 
 function questionFunction(a) {
   $("#" + a).attr("aria-expanded", "true");
@@ -50,21 +54,21 @@ $('#bell').on('click',function(){
   }
 })
 
-
 document.getElementById('newQ').onclick = function(){
+// $('#newQ').onclick = function(){
     document.getElementById('askQ').style.display = "block";
     var p = $("#askQ");
     var offset = p.offset();
     window.scrollBy(offset.left, offset.top);
 }
 
-document.getElementById('cancel').onclick = function(){
+document.getElementById('cancel').onclick = function() {
+  // $('#cancel').onclick = function(){
     document.getElementById('askQ').style.display = "none";
 }
 
-console.log($('#alert'));
-
-document.getElementById('submit').onclick = function(){
+document.getElementById('submit').onclick = function() {
+// $('#submit').onclick = function(){
   // var selectedCategory = $("select.category").children("option:selected").val();
   // console.log(selectedCategory);
   if (($('#description').val()!="")) {
@@ -75,10 +79,31 @@ document.getElementById('submit').onclick = function(){
   } else {
     $("#alert")[0].style.display = "block";
   }
+  document.getElementById('askQ').style.display = "none";
 }
 
-document.getElementById('alert-close').onclick = function(){
+$('#alert-close').onclick = function(){
     $("#alert")[0].style.display = "none";
 }
 
-// });
+
+$('#myUL a').on('click', function() {
+  var a = this.id;
+  // assem = a;
+  // console.log("here"+assem)
+
+  // openQuestion(a)
+  // populateEvents()
+  // document.getElementById('search-bar').value = parse_string(a);
+  // myFunction();
+
+})
+
+function openQuestion(a) {
+    $('#heading' + a + ' button').attr("aria-expanded", "true");
+    $('#heading' + a + ' button').removeClass('collapsed');
+    $('#a' + a).addClass('show');
+    $('#a' + a).attr("aria-expanded", "true");
+
+
+}

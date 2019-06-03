@@ -74,7 +74,7 @@ $(".lastBtn").on('click', '#submitBtn', function () {
       return;
     }
     writeToDatabase({'title': parseForDB(title), 'description': description, 
-      'date': date, "type": type, "help": totalHelp, 'index': events.length, 'userCreate': 1})
+      'date': date, "type": type, "help": totalHelp, 'index': events.length, 'userCreate': 1, 'location': location, 'duration': expecDur})
     // writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah", 
     //  'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 4, 3, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 0, 0]], 'index': 0})
         

@@ -55,7 +55,7 @@ $( document ).ready(function()	{
 		$("#events").empty();
 		if (events.length == 0) {
 			var markup = `<div class="col-md-4 col-sm-6 portfolio-item ` + curEvent.type + ` z` + i.toString() +  `">
-							<h2> There are no events currently :( </h2>
+							<h2> There are currently no events  :( </h2>
   		  	 	 	    </div>
 			`
 			$(".events").append(markup)
@@ -82,8 +82,10 @@ $( document ).ready(function()	{
           </a>
           <div class="portfolio-caption event eventDescr">
             <h4>`+ parse_string(curEvent.title) + `</h4>
-             <i class="text-muted"> Date:` + curEvent.date + `</i>
-             <p  style = "margin-bottom: 5px">Descrption:` +  curEvent.description + `</p><br>`;
+             <i class="text-muted"><p style="font-weight:530;display:inline;"> Date:&nbsp</p>` + curEvent.date + `</i><br>
+             <i class="text-muted"> <p style="font-weight:530;display:inline;"> Location:&nbsp</p>` + curEvent.location + `</i><br>
+             <i class="text-muted"><p style="font-weight:530;display:inline;"> Duration:&nbsp</p>` + curEvent.duration + ` hours` + `</i><br>
+             <p  style = "margin-bottom: 5px;"><p style="font-weight:530;display:inline;">Description: &nbsp</p>` +  curEvent.description + `</p><br>`;
 
             if (!curEvent.join_status) {
             		markup += `<button type="button" class="btn btn-primary joinButton"> Join </button>`
@@ -136,12 +138,15 @@ $( document ).ready(function()	{
 						            </div>
 
 						          </a>
-						          <div class="portfolio-caption">
-						            <h4>`+ parse_string(curEvent.title) + `</h4>
-						             <i class="text-muted"> Date:` + curEvent.date + `</i>
-						             <p>Descrption:` +  curEvent.description + `</p><br>
-						             <p class = "mb-0" style = "color: #4286f4;"> You are the creator of this event.</p>
+						          <div class="portfolio-caption event eventDescr">
+							            <h4>`+ parse_string(curEvent.title) + `</h4>
+							             <i class="text-muted"><p style="font-weight:530;display:inline;"> Date:&nbsp</p>` + curEvent.date + `</i><br>
+							             <i class="text-muted"> <p style="font-weight:530;display:inline;"> Location:&nbsp</p>` + curEvent.location + `</i><br>
+							             <i class="text-muted"><p style="font-weight:530;display:inline;"> Duration:&nbsp</p>` + curEvent.duration + ` hours` + `</i><br>
+							             <p  style = "margin-bottom: 5px;"><p style="font-weight:530;display:inline;">Description: &nbsp</p>` +  curEvent.description + `</p><br>
+							             <p class = "mb-0" style = "color: #4286f4;"> You are the creator of this event.</p>
 						          </div>`;
+						          
 			 	}
 			$('#events').append(markup)
 		}
@@ -220,7 +225,7 @@ $( document ).ready(function()	{
 			// }
 		}
 		writeToDatabase({'title': curEvent.title, 'description': curEvent.description,
-			'date': curEvent.date, 'type': curEvent.type, "help": curEvent.help, 'index': curEvent.index, 'userCreate': 0, 'type': event.type, 'userCreate': 0})
+			'date': curEvent.date, 'type': curEvent.type, "help": curEvent.help, 'index': curEvent.index, 'userCreate': 0, 'location': curEvent.location, 'duration': curEvent.duration})
 
 		// curEvent.join_status = true;
 
@@ -300,15 +305,7 @@ $( document ).ready(function()	{
 
 	});
 	async function f() {
-		// var kek1 = writeToDatabase({'title': "Blah_Blah_Blah", 'description': "Blah blah blah blah blah",
-		// 	'date': '2019.05.25', "type": "cookingEvent", "help": [['cooking', 4, 3, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 0, 0]], 'index': 0, 'userCreate': 0, 'type': `dancingEvent`})
-
-		// var kek2 = writeToDatabase({'title': "Gaf_gaf_gaf", 'description': "gaf blah gaf blah blah",
-		// 	'date': '2019.05.31', "type": "cookingEvent", "help": [['cooking', 2, 2, 0], ['reservation_of_speaker', 1, 0, 0], ['reservation_of_room', 1, 1, 1]], 'index': 1, 'userCreate': 1, 'type': `cookingEvent`})
-		// // readFromDatabase();
-		// var kek3 = await kek1;
-		// var kek4 = await kek2;
-		// if (kek3 && kek4) {
+	
 		var checkPopulate =  readFromDatabase();
 		var checkPopulate1 = await checkPopulate;
 		// checkPopulate1 = true;
@@ -320,13 +317,7 @@ $( document ).ready(function()	{
 	f();
 		$(".container").on('click', '#create_event', function () {
   window.location.replace("create-event.html");
-  //   async function demo() {
-  // console.log('Taking a break...');
-  // await sleep(2000);
 
-// }
-
-// demo();
 
 })
 	// populateEvents();

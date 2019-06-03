@@ -10,6 +10,9 @@ var newRow = '<tr class = "helpRow"><td class = "col0"><button type = "button"; 
 
 
 
+$(document).ready(function() {
+  
+})
 
 // REQUEST
 var allnames= ["Bauka", "Tosha", "Assem", "Naziya", "Ayan", "Yerba", "Shyngys", "Nurs"]

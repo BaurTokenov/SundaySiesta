@@ -1,4 +1,3 @@
-
 function myFunction() {
   // Declare variables
   var input, filter, ul, li, a, i, txtValue;
@@ -31,9 +30,38 @@ function myFunction() {
 
 }
 
-function questionFunction(a) {
-  $("#" + a).attr("aria-expanded", "true");
-  $("#" + a).addClass('show');
-  $("#button" + a).removeClass('collapsed');
-    $("#button" + a).attr("aria-expanded", "true");
+function openQuestion(a) {
+  // if (assem != -1) {
+    closeQuestions();
+    $('#heading' + a + ' button').attr("aria-expanded", "true");
+    $('#heading' + a + ' button').removeClass('collapsed');
+    $('#a' + a).addClass('show');
+    $('#a' + a).attr("aria-expanded", "true");
+    var target = $('#heading' + a);
+    if( target. length ) {
+      // event. preventDefault();
+      $('html, body'). stop(). animate({
+      scrollTop: target. offset(). top-95}, 1000);
+  }
 }
+
+function closeQuestions() {
+  for (var i = 1; i <= 9; i++) {
+    $('#heading' + i + ' button').attr("aria-expanded", "false");
+    $('#heading' + i + ' button').addClass('collapsed');
+    $('#a' + i).removeClass('show');
+    $('#a' + i).attr("aria-expanded", "false");
+  }
+}
+
+$( document ).ready(function()	{
+var text = window.location.hash.substring(1);
+
+// $('#heading' + a + ' button').attr("aria-expanded", "true");
+// $('#heading' + a + ' button').removeClass('collapsed');
+// $('#a' + a).addClass('show');
+// $('#a' + a).attr("aria-expanded", "true");
+
+
+openQuestion(text);
+})

@@ -40,7 +40,9 @@ $( document ).ready(function()	{
 })
 
 $('#myTable').on('click','.contBtn',function(){
-		window.location.replace("createEx.html");
+		curPastEventText = parseForDB($(this).closest('tr').find('h4').text());
+		window.location.href = ("createEx.html#" + curPastEventText);
+		
   })
 $('#notificationCanvas').on('click','.back',function(){
 		window.location.replace("history.html");

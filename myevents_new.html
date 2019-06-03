@@ -42,7 +42,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="">Sunday Siesta</a>
+        <a class="navbar-brand js-scroll-trigger" href="./homepage.html">Sunday Siesta</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -59,10 +59,10 @@
             <a class="nav-link js-scroll-trigger active" href="./myevents_new.html">My Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="./history_new.html">History</a>
+            <a class="nav-link js-scroll-trigger" href="./history_new.html">Past events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="./qanda_new.html">Q&A</a>
+            <a class="nav-link js-scroll-trigger" href="./qanda.html">Q&A</a>
           </li>
         </ul>
         </div>
@@ -233,7 +233,36 @@
     </div>
   </div> -->
 <!-- </div> -->
-
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Personal information</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table>
+          <div class="md-form">
+            <div type="text" class="form-control"  id="theTelNumber"><p style="display:inline;font-weight:bold">Tel. number:</p>   010-3798-7829</div>
+          </div>
+          <div class="md-form">
+            <div type="text" class="form-control" id="theEmail"><p style="display:inline;font-weight:bold">Email:</p>   sweeetheart99@kaist.ac.kr </div>
+          </div>
+          <div class="md-form">
+            <div type="text" class="form-control" id="kakaoID"><p style="display:inline;font-weight:bold">Kakao ID:</p>   sweet99 </div>
+          </div>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color:#4286f4">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

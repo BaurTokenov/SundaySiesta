@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Q & A</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/myevents.min.css" rel="stylesheet">
+  <link href="css/styleqa.css" rel="stylesheet"/>
+
+<!-- OUR links -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div >
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="">Sunday Siesta</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="./homepage.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="./homepage.html">Upcoming Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="./myevents_new.html">My Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="./history_new.html">Past events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger active" href="./qanda.html">Q&A</a>
+            </li>
+          </ul>
+          </div>
+        </div>
+
+        <div>
+        <header class="masthead fixed-top" style = "z-index: -1">
+          <div class="container fluid">
+          </div>
+        </header>
+      </div>
+
+      </nav>
+    </div>
+
+  <div style = "background-color:">
+    <section id = "top-box" style = "margin-top: 95px; margin-bottom: 0px;background-color: ">
+    <!-- <section class = "container">  -->
+      <h1 class="align-center">Find out the answer for your question...</h1>
+      <div class="input-group md-form form-sm form-2 pl-0" id="search-box">
+        <input class="form-control my-0 py-1"  type="text" onkeyup="myFunction()" placeholder="Search" id="search-bar" >
+
+        <!-- <div class="input-group-append">
+          <button class="input-group-text lime lighten-2" ><i class="fas fa-search text-grey" aria-hidden="true"></i></button>
+        </div> -->
+      </div>
+      <ul id="myUL" style = "display:none;" >
+
+<!-- window.location.href = '<path to profile.html>' + '#' + text; -->
+
+
+        <li><a href="#" id="8">Do we need to collect the plastic dish left after the event separately?</a></li>
+        <li><a href="budget.html#7" id ="7">How much did you spend on average for the event for around 20 people?</a></li>
+
+        <li><a href="budget.html#6" id ="6">Is it possible to get funding for the event from the university?</a></li>
+        <li><a href="food.html#4" id ="4">What is the closest grocery shop?</a></li>
+
+        <li><a href="food.html#5" id ="5">Where can I store food for the event on the campus?</a></li>
+        <li><a href="food.html#9" id ="9">Where are the trash bins near the multipurpose hall in W2-1?</a></li>
+        <li><a href="food.html#1" id ="1">Where can I order Halal meat?</a></li>
+        <li><a href="food.html#3" id ="3">Where can I order fresh vegetables?</a></li>
+        <li><a href="food.html#2"id ="2" action = "food.html" onclick = "openQuestion('2')">Where is the most affordable market near the campus?</a></li>
+      </ul>
+      <div id="noResults" style="display:none;">No results found</div>
+      <!-- <button class="search-button" type="submit"><i class="fas fa-search"></i></button> -->
+
+    </section>
+    <!-- <h2 class="align-center">Questions and Answers</h2> -->
+
+   <div class="bottom-section" style = "margin-top: 40px;">
+   <div class="row">
+    <div class="column"><a href="food.html" style = "text-decoration: none;">
+      Food</a>
+      <a class = "questions" href="food.html" style = "text-decoration: none;"><p>5 questions</p></a>
+    </div>
+    <div class="column"><a href="budget.html" style = "text-decoration: none;">
+      Budget</a>
+    <a class = "questions" href="food.html" style = "text-decoration: none;"><p>2 questions</p></a>
+    </div>
+    <div class="column"><a href="food.html" style = "text-decoration: none;">
+      Scheduling</a>
+    <a class = "questions" href="food.html" style = "text-decoration: none;"><p>15 questions</p></a>
+    </div>
+  </div>
+   <div class="row">
+    <div class="column"><a href="food.html" style = "text-decoration: none;">Media</a>
+    <a class = "questions" href="food.html" style = "text-decoration: none;"><p>3 questions</p></a>
+    </div>
+    <div class="column"><a href="food.html" style = "text-decoration: none;">Reservation</a>
+    <a class = "questions" href="food.html" style = "text-decoration: none;"><p>19 questions</p></a>
+    </div>
+    <div class="column"><a href="food.html" style = "text-decoration: none;">Music</a>
+    <a class = "questions" href="food.html" style = "text-decoration: none;"><p>12 questions</p></a>
+    </div>
+   </div>
+   <div class="row"> 
+    <div class="column"><a href="food.html" style = "text-decoration: none;">Equipment</a>
+    <a class = "questions" href="food.html" style = "text-decoration: none;"><p>24 questions</p></a>
+    </div>
+    <div class="column"><a href="food.html" style = "text-decoration: none;">Garbage sorting</a><a class = "questions" href="food.html" style = "text-decoration: none;"><p>2 questions</p></a></div>
+    <div class="column"><a href="food.html" style = "text-decoration: none;">Other</a>
+      <a class = "questions" href="food.html" style = "text-decoration: none;"><p>21 questions</p></a></div>
+   </div>
+
+
+
+     <div class="row" style = " height: 5%">
+          <div class="col-md-2 col-xs-2" style = "margin-left: 35%;">
+              <button id = "newQ" class="btn btn-primary center-block" style = ""> <i class="fas fa-plus"></i>  Ask a question</button>
+          </div>
+    </div>
+    <div class= "row" id="askQ"  style="margin-top: 5%; display:none;">
+      <tr class= "eventInfo">
+        <td class = "firstCol"><label for="location" class = "form">Category:</label></td>
+        <td class = "secondCol">
+          <select id = "category" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <option value = "default" selected>Choose ...</option>
+            <option value="1">Budget</option>
+            <option value="2">Equipment</option>
+            <option value="3">Food</option>
+            <option value="4">Garbage Sorting</option>
+            <option value="5">Media</option>
+            <option value="6">Music</option>
+            <option value="7">Reservation</option>
+            <option value="8">Scheduling</option>
+            <option value="9s">Other</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td class = "firstCol"><label for="description" class = "form">Question:</label></td>
+        <td class = "secondCol"><textarea class="form-control" id="description" placeholder="Type your question..." ></textarea></td>
+      </tr>
+      <tr>
+        <!-- <div class = "row"> -->
+       <div class = "col-md-12">
+          <div class="text-right" style="margin-top: 2%; margin-bottom: 1%; margin-right: 1%">
+          <button id = "submit" type="submit" class="btn btn-primary my-1">Submit</button>
+
+          <button id = "cancel" type="submit" class="btn btn-secondary my-1">Cancel</button>
+          </div>
+        </div>
+        <div id = "alert" style = "display:none;" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Warning!</strong> Fill all the fields above.
+    <button type="button" class="close" id = "alert-close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+   </div>
+      <!-- </div> -->
+      </tr>
+    </div>
+
+
+
+  </div>
+
+
+  </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+
+  <!-- OUR links -->
+
+      <script src="js/jquery.min.js"></script>
+      <!-- <script src="js/bootstrap.min.js"></script> -->
+      <!-- <script src="js/agency.js"></script> -->
+      <script src="js/qanda.js"></script>
+      <!-- <script src="js/category.js"></script> -->
+      <script src="jquery/js/jquery-1.9.0.min.js"></script>
+      <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+
+
+
+</body>
+
+</html>
